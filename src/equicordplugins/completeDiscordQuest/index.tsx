@@ -7,7 +7,7 @@
 import definePlugin from "@utils/types";
 import { findByCodeLazy, findByPropsLazy } from "@webpack";
 import { FluxDispatcher, RestAPI } from "@webpack/common";
-
+import { Devs } from "@utils/constants";
 import { QuestButton, QuestsCount } from "./components/QuestButton";
 import { questHandlers } from "./handlers";
 import { bypassCaptcha, cleanupCaptchaMonitor, clearTokenCache, detectCaptchaChallenge, patchRequestWithCaptchaBypass, setupCaptchaMonitor, startTokenCacheCleanup, stopTokenCacheCleanup } from "./handlers/captcha";
@@ -317,10 +317,8 @@ function handleQuestCompletion(quest: QuestValue) {
 export default definePlugin({
     name: "CompleteDiscordQuest",
     description: "A plugin that completes multiple discord quests in background simultaneously.",
-    authors: [{
-        name: "Talya1412",
-        id: 935942283214344302n
-    }],
+    tags: ["Customisation"],
+    authors: [Devs.Talya],
     settings,
     patches: [
         {
