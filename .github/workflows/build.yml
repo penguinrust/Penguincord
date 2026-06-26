@@ -52,9 +52,9 @@ jobs:
 
                   # legacy un-asared files
                   cp desktop/* release
-                  for file in equibop/*; do
+                  for file in Installer/*; do
                     filename=$(basename "$file")
-                    cp "$file" "release/equibop${filename^}"
+                    cp "$file" "release/Installer${filename^}"
                   done
 
                   find release -size 0 -delete
@@ -67,7 +67,7 @@ jobs:
                   gh release upload latest --clobber dist/release/*
 
             - name: Upload Plugin JSONs to Equibored repo
-              if: github.repository == 'Penguincord/Penguincord' && vars.ACT == 'false'
+              if: github.repository == 'penguinrust/Penguincord' && vars.ACT == 'false'
               run: |
                   git config --global user.name "GitHub-Actions"
                   git config --global user.email actions@github.com
