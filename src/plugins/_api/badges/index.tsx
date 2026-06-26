@@ -94,7 +94,7 @@ async function loadBadges(url: string, noCache = false) {
 
 async function loadAllBadges(noCache = false) {
     const vencordBadges = await loadBadges("https://badges.vencord.dev/badges.json", noCache);
-    const penguincordBadges = await loadBadges("https://wither.lol/badges.json", noCache);
+    const penguincordBadges = await loadBadges("https://badges.wither.lol/badges.json", noCache);
 
     DonorBadges = vencordBadges;
     PenguincordDonorBadges = penguincordBadges;
