@@ -30,6 +30,7 @@ jobs:
         name: Build Penguincord
         runs-on: ubuntu-latest
         if: github.repository == 'Penguincord/Penguincord'
+        if: github.actor != 'actions-user'
 
         steps:
             - uses: actions/checkout@v6
