@@ -18,7 +18,6 @@ jobs:
     Build:
         name: Build Penguincord
         runs-on: ubuntu-latest
-        if: github.actor != 'actions-user'
 
         steps:
             - uses: actions/checkout@v7
