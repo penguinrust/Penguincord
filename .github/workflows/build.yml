@@ -7,7 +7,7 @@ on:
 env:
     FORCE_COLOR: true
     GITHUB_TOKEN: ${{ secrets.ETOKEN }}
-    GH_TOKEN: ${{ secrets.ETOKEN }}
+    GH_TOKEN: ${{ github.token }}
     REPO: penguinrust/Penguincord
     USERNAME: GitHub-Actions
 
@@ -16,9 +16,8 @@ permissions:
 
 jobs:
     Build:
-        name: Build Penguincord
+        name: Build Testcord
         runs-on: ubuntu-latest
-        if: github.actor != 'actions-user'
 
         steps:
             - uses: actions/checkout@v6
@@ -34,13 +33,16 @@ jobs:
             - name: Install dependencies
               run: pnpm install --frozen-lockfile
 
+            - name: Build web
+              run: pnpm buildWebStandalone
+
             - name: Build
               run: pnpm buildStandalone
 
             - name: Generate plugin lists
               run: |
                   pnpm generatePluginJson dist/plugins.json
-                  pnpm generatePenguincordPluginJson dist/equicordplugins.json
+                  pnpm generateEquicordPluginJson dist/equicordplugins.json
                   pnpm generateVencordPluginJson dist/vencordplugins.json
                   pnpm generateDevsList dist/devs.json
 
@@ -49,8 +51,11 @@ jobs:
                   cd dist
                   mkdir release
 
-                  # copy the plugin data jsons and the desktop/equibop asars
-                  cp *.{json,asar} release
+                  cp browser/browser.* release
+                  cp Equicord.user.{js,js.LEGAL.txt} release
+
+                  # copy the plugin data jsons, the extension zips and the desktop/equibop asars
+                  cp *.{json,zip,asar} release
 
                   # legacy un-asared files
                   cp desktop/* release
@@ -63,22 +68,15 @@ jobs:
                   rm release/package.json
                   rm release/*.map
 
-            - name: Upload Penguincord Stable
-              if: ${{ vars.ACT == 'false' }}
+            - name: Create or update release
+              run: |
+                  if gh release view latest >/dev/null 2>&1; then
+                      echo "Release 'latest' exists, uploading files..."
+                  else
+                      echo "Creating release 'latest'..."
+                      gh release create latest --title "Penguincord Latest" --notes "Automated release" --generate-notes
+                  fi
+
+            - name: Upload to latest release
               run: |
                   gh release upload latest --clobber dist/release/*
-
-            - name: Upload Plugin JSONs to Equibored repo
-              if: github.repository == 'penguinrust/Penguincord' && vars.ACT == 'false'
-              run: |
-                  git config --global user.name "GitHub-Actions"
-                  git config --global user.email actions@github.com
-                  git clone https://$USERNAME:$GITHUB_TOKEN@github.com/$REPO.git plugins
-                  cd plugins
-
-                  cp ../dist/release/*plugins.json .
-                  cp ../dist/release/devs.json .
-                  git add -A
-
-                  git commit -m "Plugins for https://github.com/$GITHUB_REPOSITORY/commit/$GITHUB_SHA"
-                  git push --force https://$USERNAME:$GITHUB_TOKEN@github.com/$REPO.git
