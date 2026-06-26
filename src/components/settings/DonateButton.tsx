@@ -28,7 +28,7 @@ export function DonateButton({
     className,
     ...props
 }: Partial<ButtonProps> & { penguincord?: boolean; }) {
-    const link = penguincord ? "https://github.com/sponsors/thororen1234" : "https://github.com/sponsors/Vendicated";
+    const link = penguincord ? "https://youtu.be/uh2mFyGsAoU" : "https://youtu.be/uh2mFyGsAoU   ";
     return (
         <Button
             {...props}
@@ -39,7 +39,7 @@ export function DonateButton({
             className={className || "vc-donate-button"}
         >
             <Heart />
-            Donate
+            this button sends you to stateside lol
         </Button>
     );
 }
