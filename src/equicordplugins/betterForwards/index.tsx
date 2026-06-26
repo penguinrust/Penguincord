@@ -10,7 +10,7 @@ import ErrorBoundary from "@components/ErrorBoundary";
 import { Flex } from "@components/Flex";
 import { InfoIcon } from "@components/Icons";
 import { Margins } from "@components/margins";
-import { Devs, EquicordDevs } from "@utils/constants";
+import { Devs, PenguincordDevs } from "@utils/constants";
 import { classNameFactory } from "@utils/css";
 import { sendMessage } from "@utils/discord";
 import definePlugin, { OptionType } from "@utils/types";
@@ -38,9 +38,9 @@ export interface ForwardOptionsState {
 }
 
 export const ForwardOptionsContext = proxyLazyWebpack(() =>
-    React.createContext<ForwardOptionsState & { message: Message }>({
+    React.createContext<ForwardOptionsState & { message: Message; }>({
         opts: {},
-        setOpts: () => {},
+        setOpts: () => { },
         defaultOpts: { onlyAttachmentIds: [], onlyEmbedIndices: [] },
         hasOpts: false,
         message: {} as Message
@@ -94,7 +94,7 @@ export default definePlugin({
     description: "Message forward utilities including NSFW bypass and UI improvements.",
     tags: ["Chat", "Utility"],
     searchTerms: ["selfForward", "betterForwardMeta"],
-    authors: [Devs.thororen, Devs.sadan, Devs.nin0dev, EquicordDevs.VillainsRule, EquicordDevs.davri],
+    authors: [Devs.thororen, Devs.sadan, Devs.nin0dev, PenguincordDevs.VillainsRule, PenguincordDevs.davri],
     settings,
     managedStyle,
     patches: [
@@ -159,7 +159,7 @@ export default definePlugin({
         }
     ],
 
-    async sendForward(additionalMessage: string | null, channels: { id: string; type: string }[], message: Message, options: ForwardOptions) {
+    async sendForward(additionalMessage: string | null, channels: { id: string; type: string; }[], message: Message, options: ForwardOptions) {
         const contentMessage = message.messageSnapshots[0]?.message ?? message;
 
         const newLine = `\n${settings.store.forwardPreface} `;
@@ -199,7 +199,7 @@ export default definePlugin({
         ignore = !!event?.shiftKey;
     },
 
-    renderForwardFooter({ message }: { message: Message }) {
+    renderForwardFooter({ message }: { message: Message; }) {
         if (!message.messageReference) return null;
 
         const { guild_id, channel_id, message_id } = message.messageReference;
@@ -215,7 +215,7 @@ export default definePlugin({
         );
     },
 
-    useProps(props: { message: Message; forwardOptions?: ForwardOptions }) {
+    useProps(props: { message: Message; forwardOptions?: ForwardOptions; }) {
         const message = props.message.messageSnapshots[0]?.message ?? props.message;
 
         const [opts, setOpts] = useState(() => {

@@ -6,7 +6,7 @@
 
 import { MessageSendListener } from "@api/MessageEvents";
 import { definePluginSettings } from "@api/Settings";
-import { EquicordDevs } from "@utils/constants";
+import { PenguincordDevs } from "@utils/constants";
 import { getCurrentChannel, sendMessage } from "@utils/discord";
 import definePlugin, { OptionType } from "@utils/types";
 import { ChannelStore, ComponentDispatch, PermissionsBits, UserStore } from "@webpack/common";
@@ -118,7 +118,7 @@ export default definePlugin({
     description: "Splits large messages into multiple to fit Discord's message limit.",
     dependencies: ["MessageEventsAPI"],
     tags: ["Appearance", "Customisation", "Chat"],
-    authors: [EquicordDevs.Reycko],
+    authors: [PenguincordDevs.Reycko],
     settings,
     onBeforeMessageSend: listener,
 

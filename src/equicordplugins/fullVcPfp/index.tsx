@@ -5,7 +5,7 @@
  */
 
 import { disableStyle, enableStyle } from "@api/Styles";
-import { EquicordDevs } from "@utils/constants";
+import { PenguincordDevs } from "@utils/constants";
 import { getUserAvatarUrl } from "@utils/misc";
 import definePlugin from "@utils/types";
 import { ChannelRTCStore, ChannelStore, UserStore, VoiceStateStore } from "@webpack/common";
@@ -16,7 +16,7 @@ export default definePlugin({
     name: "FullVCPFP",
     description: "Makes avatars take up the entire vc tile",
     tags: ["Appearance", "Voice"],
-    authors: [EquicordDevs.mochienya],
+    authors: [PenguincordDevs.mochienya],
     patches: [
         {
             find: "\"data-selenium-video-tile\":",

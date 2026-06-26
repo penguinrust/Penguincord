@@ -5,7 +5,7 @@
  */
 
 import { ApplicationIntegrationType } from "@vencord/discord-types/enums";
-import { OAuth2AuthorizeModal, openModal,showToast, Toasts } from "@webpack/common";
+import { OAuth2AuthorizeModal, openModal, showToast, Toasts } from "@webpack/common";
 
 import { apiConstants, authFetch, getData } from "./api";
 import { useAuthorizationStore } from "./stores/AuthorizationStore";
@@ -27,7 +27,7 @@ export function presentOAuth2Modal() {
 
                 try {
                     const url = new URL(location);
-                    url.searchParams.append("whois", "equicord");
+                    url.searchParams.append("whois", "penguincord");
 
                     const res = await authFetch(url);
                     if (!res) throw "Response wasn't ok";

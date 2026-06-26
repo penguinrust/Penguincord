@@ -10,7 +10,7 @@ import { fetchReposByUserId, fetchReposByUsername, fetchUserInfo, GitHubUserInfo
 import { GitHubRepo } from "@equicordplugins/githubRepos/types";
 import { classes } from "@utils/misc";
 import { findCssClassesLazy } from "@webpack";
-import { Clickable, openModal,React, useEffect, UserProfileStore, useState } from "@webpack/common";
+import { Clickable, openModal, React, useEffect, UserProfileStore, useState } from "@webpack/common";
 
 import { ReposModal } from "./ReposModal";
 

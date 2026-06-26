@@ -15,7 +15,7 @@ import { ExcludedReasons, PluginDependencyList } from "@components/settings/tabs
 import { PluginCard } from "@components/settings/tabs/plugins/PluginCard";
 import { TooltipContainer } from "@components/TooltipContainer";
 import { EQUIBOT_USER_ID } from "@utils/constants";
-import { isEquicordGuild, isEquicordSupport } from "@utils/misc";
+import { isPenguincordGuild, isPenguincordSupport } from "@utils/misc";
 import { Message } from "@vencord/discord-types";
 import { showToast, Tooltip, useMemo } from "@webpack/common";
 import { JSX } from "react";
@@ -41,7 +41,7 @@ export function ChatPluginCard({ url, description }: { url: string, description:
     if (excludedPlugin || !p) {
         const toolTipText = excludedPlugin
             ? `${pluginName} is only available on the ${ExcludedReasons[ExcludedPlugins[pluginName]]}`
-            : "This plugin is not on this version of Equicord. Try updating!";
+            : "This plugin is not on this version of Penguincord. Try updating!";
 
         const card = (
             <AddonCard
@@ -80,7 +80,7 @@ export function ChatPluginCard({ url, description }: { url: string, description:
 
     if (required) {
         const tooltipText = p.required || !dependents.length
-            ? "This plugin is required for Equicord to function."
+            ? "This plugin is required for Penguincord to function."
             : <PluginDependencyList deps={dependents} />;
 
         return (
@@ -114,10 +114,10 @@ export const PluginCards = ErrorBoundary.wrap(function PluginCards({ message }: 
 
     // Process embeds
     message.embeds?.forEach(embed => {
-        if (!embed.url?.startsWith("https://equicord.org/plugins/") && !embed.url?.startsWith("https://vencord.dev/plugins/")) return;
+        if (!embed.url?.startsWith("https://penguincord.org/plugins/") && !embed.url?.startsWith("https://vencord.dev/plugins/")) return;
 
-        const isEquicord = isEquicordGuild(message.channel_id) && isEquicordSupport(message.author.id);
-        if (!isEquicord) return;
+        const isPenguincord = isPenguincordGuild(message.channel_id) && isPenguincordSupport(message.author.id);
+        if (!isPenguincord) return;
 
         const pluginNameFromUrl = new URL(embed.url).pathname.split("/")[2];
         const actualPluginName = Object.keys(plugins).find(name =>
@@ -142,7 +142,7 @@ export const PluginCards = ErrorBoundary.wrap(function PluginCards({ message }: 
     if (message.author.id === EQUIBOT_USER_ID && components?.length >= 4) {
         const description = components[1]?.content;
         const pluginUrl = components.find((c: any) => c?.components)?.components[0]?.url;
-        if (pluginUrl?.startsWith("https://equicord.org/plugins/") || pluginUrl?.startsWith("https://vencord.dev/plugins/")) {
+        if (pluginUrl?.startsWith("https://penguincord.org/plugins/") || pluginUrl?.startsWith("https://vencord.dev/plugins/")) {
             const pluginNameFromUrl = new URL(pluginUrl).pathname.split("/")[2];
             const actualPluginName = Object.keys(plugins).find(name =>
                 name.toLowerCase() === pluginNameFromUrl?.toLowerCase()

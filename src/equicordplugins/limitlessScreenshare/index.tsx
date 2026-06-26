@@ -5,7 +5,7 @@
  */
 
 import { definePluginSettings } from "@api/Settings";
-import { EquicordDevs } from "@utils/constants";
+import { PenguincordDevs } from "@utils/constants";
 import definePlugin, { OptionType } from "@utils/types";
 import { lodash, MediaEngineStore, Menu, useEffect, useMemo, useState } from "@webpack/common";
 
@@ -71,7 +71,7 @@ const settings = definePluginSettings({
 export default definePlugin({
     name: "LimitlessScreenshare",
     description: "Adds a slider for screenshare resolution and fps.",
-    authors: [EquicordDevs.KawaiianPizza],
+    authors: [PenguincordDevs.KawaiianPizza],
     tags: ["Utility", "Voice"],
     settings,
     patches: [

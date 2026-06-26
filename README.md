@@ -1,8 +1,8 @@
 # [<img src="./browser/icon.png" width="40" align="left" alt="Penguincord">](https://github.com/penguinrust/Penguincord) Penguincord
 
-[![Equibop](https://img.shields.io/badge/Equibop-grey?style=flat)](https://github.com/Equicord/Equibop)
-[![Tests](https://github.com/Equicord/Equicord/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/Equicord/Equicord/actions/workflows/test.yml)
-[![Discord](https://img.shields.io/discord/1173279886065029291.svg?color=768AD4&label=Discord&logo=discord&logoColor=white)](https://equicord.org/discord)
+[![Equibop](https://img.shields.io/badge/Equibop-grey?style=flat)](https://github.com/penguinrust/Equibop)
+[![Tests](https://github.com/penguinrust/Penguincord/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/penguinrust/Penguincord/actions/workflows/test.yml)
+[![Discord](https://img.shields.io/discord/1173279886065029291.svg?color=768AD4&label=Discord&logo=discord&logoColor=white)](https://penguincord.org/discord)
 
 Penguincord is a fork of [Vencord](https://github.com/Vendicated/Vencord), with over 300+ plugins.
 
@@ -16,19 +16,19 @@ Our included plugins can be found [here](https://google.com). (website not done 
 
 Windows
 
-- [GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.exe)
-- [CLI](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli.exe)
+- [GUI](https://github.com/penguinrust/Equilotl/releases/latest/download/Equilotl.exe)
+- [CLI](https://github.com/penguinrust/Equilotl/releases/latest/download/EquilotlCli.exe)
 
 MacOS
 
-- [X64 GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-darwin-x64.zip)
-- [ARM64 GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-darwin-arm64.zip)
+- [X64 GUI](https://github.com/penguinrust/Equilotl/releases/latest/download/Equilotl-darwin-x64.zip)
+- [ARM64 GUI](https://github.com/penguinrust/Equilotl/releases/latest/download/Equilotl-darwin-arm64.zip)
 
 Linux
 
-- [GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x11)
-- [CLI](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-Linux)
-- [AUR](https://aur.archlinux.org/packages?O=0&K=equicord)
+- [GUI](https://github.com/penguinrust/Equilotl/releases/latest/download/Equilotl-x11)
+- [CLI](https://github.com/penguinrust/Equilotl/releases/latest/download/EquilotlCli-Linux)
+- [AUR](https://aur.archlinux.org/packages?O=0&K=penguincord)
 
 ```shell
 bash -c "$(curl -sS https://raw.githubusercontent.com/penguinrust/Penguincord/refs/heads/main/misc/install.sh)"
@@ -48,9 +48,9 @@ Install `pnpm`:
 npm i -g pnpm
 ```
 
-> :exclamation: **IMPORTANT** Make sure you aren't using an admin/root terminal from here onwards. It **will** mess up your Discord/Equicord instance and you **will** most likely have to reinstall.
+> :exclamation: **IMPORTANT** Make sure you aren't using an admin/root terminal from here onwards. It **will** mess up your Discord/Penguincord instance and you **will** most likely have to reinstall.
 
-Clone Equicord:
+Clone Penguincord:
 
 ```shell
 git clone https://github.com/penguinrust/Penguincord
@@ -91,11 +91,11 @@ Thank you to [Vendicated](https://github.com/Vendicated) for creating [Vencord](
 
 ## Star History
 
-<a href="https://star-history.com/#Equicord/Equicord&Timeline">
+<a href="https://star-history.com/#Penguincord/Penguincord&Timeline">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Equicord/Equicord&type=Timeline&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Equicord/Equicord&type=Timeline" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Equicord/Equicord&type=Timeline" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Penguincord/Penguincord&type=Timeline&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Penguincord/Penguincord&type=Timeline" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Penguincord/Penguincord&type=Timeline" />
   </picture>
 </a>
 

@@ -219,7 +219,7 @@ function Tag<T>({ id, children, source, onChange, disabled }: { id: T; source: T
         <div
             className={tagClasses.tag}
             data-selection-mode="multiple"
-            data-selected={!disabled &&selected ? "true" : undefined}
+            data-selected={!disabled && selected ? "true" : undefined}
             onClick={() => onChange(selected ? source.filter(x => x !== id) : [...source, id])}
             style={{ textWrap: "wrap", opacity: disabled ? .5 : undefined }}
             inert={disabled}

@@ -12,7 +12,7 @@ import { Button } from "@components/Button";
 import { Divider } from "@components/Divider";
 import ErrorBoundary from "@components/ErrorBoundary";
 import { HeadingSecondary } from "@components/Heading";
-import { Devs, EquicordDevs } from "@utils/constants";
+import { Devs, PenguincordDevs } from "@utils/constants";
 import { classNameFactory } from "@utils/css";
 import { Margins } from "@utils/margins";
 import { useForceUpdater } from "@utils/react";
@@ -1047,7 +1047,7 @@ export default definePlugin({
     name: "VcNarratorCustom",
     description: "Announces when users join, leave, or move voice channels via narrator using TikTok TTS. Revamped and back from the dead.",
     tags: ["Accessibility", "Voice"],
-    authors: [Devs.Ven, Devs.Nyako, EquicordDevs.Loukios, EquicordDevs.examplegit, EquicordDevs.qdnx],
+    authors: [Devs.Ven, Devs.Nyako, PenguincordDevs.Loukios, PenguincordDevs.examplegit, PenguincordDevs.qdnx],
     settings,
     contextMenus: {
         "user-context": UserContextMenuPatch,
@@ -1217,7 +1217,7 @@ export default definePlugin({
             return () => { onQueueChange = null; };
         }, []);
 
-        const authorUser = UserStore.getUser(String(EquicordDevs.examplegit.id));
+        const authorUser = UserStore.getUser(String(PenguincordDevs.examplegit.id));
         const authorAvatar = authorUser ? IconUtils.getUserAvatarURL(authorUser, false, 64) : null;
 
         return (

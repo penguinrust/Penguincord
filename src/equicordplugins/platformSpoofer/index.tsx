@@ -6,7 +6,7 @@
 
 import { definePluginSettings } from "@api/Settings";
 import { Notice } from "@components/Notice";
-import { EquicordDevs } from "@utils/constants";
+import { PenguincordDevs } from "@utils/constants";
 import definePlugin, { OptionType } from "@utils/types";
 import { UserStore } from "@webpack/common";
 
@@ -53,7 +53,7 @@ export default definePlugin({
     name: "PlatformSpoofer",
     description: "Spoof what platform or device you're on",
     tags: ["Utility"],
-    authors: [EquicordDevs.Drag, EquicordDevs.neoarz],
+    authors: [PenguincordDevs.Drag, PenguincordDevs.neoarz],
     settingsAboutComponent: () => (
         <Notice.Warning>
             We can't guarantee this plugin won't get you warned or banned.
@@ -79,7 +79,7 @@ export default definePlugin({
             replacement: [
                 {
                     match: /(?<=\}\),)(\i)/g,
-                    replace: "$1=e=>({enabled:true}),_equicord_$1"
+                    replace: "$1=e=>({enabled:true}),_penguincord_$1"
                 }
             ]
         },
