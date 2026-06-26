@@ -7,7 +7,7 @@ on:
 env:
     FORCE_COLOR: true
     GITHUB_TOKEN: ${{ secrets.ETOKEN }}
-    REPO: Penguincord/Equibored
+    REPO: penguinrust/Penguincord
     USERNAME: GitHub-Actions
 
 permissions:
