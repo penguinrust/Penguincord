@@ -52,9 +52,9 @@ jobs:
 
                   # legacy un-asared files
                   cp desktop/* release
-                  for file in Installer/*; do
+                  for file in equibop/*; do
                     filename=$(basename "$file")
-                    cp "$file" "release/Installer${filename^}"
+                    cp "$file" "release/equibop${filename^}"
                   done
 
                   find release -size 0 -delete
