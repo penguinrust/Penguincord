@@ -5,10 +5,16 @@
  */
 
 import { BaseText } from "@components/BaseText";
+<<<<<<< HEAD
 import { fetchOrgRepos, fetchReposByUserId, fetchReposByUsername, fetchUserInfo, fetchUserOrgs } from "@equicordplugins/githubRepos/githubApi";
 import { GitHubRepo, RepoGroup, RepoSortMode } from "@equicordplugins/githubRepos/types";
 import { buildRepoGroups, PERSONAL_GROUP_KEY, sortGroups } from "@equicordplugins/githubRepos/utils";
 import { React, useEffect, UserProfileStore, useState } from "@webpack/common";
+=======
+import { fetchReposByUserId, fetchReposByUsername, fetchUserInfo, GitHubUserInfo } from "@equicordplugins/githubRepos/githubApi";
+import { GitHubRepo } from "@equicordplugins/githubRepos/types";
+import { openModal, React, useEffect, UserProfileStore, useState } from "@webpack/common";
+>>>>>>> 81c92ec9d (So much done that i cant remember)
 
 import { cl, settings } from "..";
 import { RepoCard } from "./RepoCard";

@@ -20,7 +20,7 @@ import "./style.css";
 
 import { definePluginSettings } from "@api/Settings";
 import ErrorBoundary from "@components/ErrorBoundary";
-import { Devs, EquicordDevs } from "@utils/constants";
+import { Devs, PenguincordDevs } from "@utils/constants";
 import { classNameFactory } from "@utils/css";
 import { classes } from "@utils/misc";
 import definePlugin, { OptionType } from "@utils/types";
@@ -83,7 +83,11 @@ export default definePlugin({
     name: "ShowHiddenChannels",
     description: "Show channels that you do not have access to view.",
     tags: ["Servers", "Utility"],
+<<<<<<< HEAD
     authors: [Devs.BigDuck, Devs.AverageReactEnjoyer, Devs.D3SOX, Devs.Ven, Devs.Nuckyz, Devs.Nickyux, Devs.Rini, EquicordDevs.Oggetto],
+=======
+    authors: [Devs.BigDuck, Devs.AverageReactEnjoyer, Devs.D3SOX, Devs.Ven, Devs.Nuckyz, Devs.Nickyux, Devs.dzshn, PenguincordDevs.Oggetto],
+>>>>>>> 81c92ec9d (So much done that i cant remember)
     isModified: true,
     settings,
 

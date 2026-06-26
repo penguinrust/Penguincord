@@ -7,7 +7,7 @@
 import "./styles.css";
 
 import { definePluginSettings } from "@api/Settings";
-import { EquicordDevs } from "@utils/constants";
+import { PenguincordDevs } from "@utils/constants";
 import { classNameFactory } from "@utils/css";
 import definePlugin, { OptionType } from "@utils/types";
 import { React } from "@webpack/common";
@@ -30,7 +30,7 @@ export default definePlugin({
     name: "ProfileSets",
     description: "Allows you to save and load different profile presets, via the Profile Section in Settings.",
     tags: ["Appearance", "Customisation", "Utility"],
-    authors: [EquicordDevs.omaw, EquicordDevs.justjxke],
+    authors: [PenguincordDevs.omaw, PenguincordDevs.justjxke],
     settings,
     patches: [
         {

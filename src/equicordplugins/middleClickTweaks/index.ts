@@ -5,7 +5,7 @@
  */
 
 import { definePluginSettings } from "@api/Settings";
-import { EquicordDevs } from "@utils/index";
+import { PenguincordDevs } from "@utils/index";
 import definePlugin, { OptionType } from "@utils/types";
 
 const MIDDLE_CLICK = 1;
@@ -78,7 +78,7 @@ const settings = definePluginSettings({
 export default definePlugin({
     name: "MiddleClickTweaks",
     description: "Various middle click tweaks, such as with pasting and link opening.",
-    authors: [EquicordDevs.Etorix, EquicordDevs.korzi],
+    authors: [PenguincordDevs.Etorix, PenguincordDevs.korzi],
     settings,
 
     tags: ["Utility"],

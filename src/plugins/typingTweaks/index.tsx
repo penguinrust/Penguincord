@@ -19,7 +19,7 @@
 import { definePluginSettings, migratePluginToSettings, Settings } from "@api/Settings";
 import ErrorBoundary from "@components/ErrorBoundary";
 import { getCustomColorString } from "@equicordplugins/customUserColors";
-import { Devs, EquicordDevs } from "@utils/constants";
+import { Devs, PenguincordDevs } from "@utils/constants";
 import { classNameFactory } from "@utils/css";
 import { openUserProfile } from "@utils/discord";
 import { isNonNullish } from "@utils/guards";
@@ -118,7 +118,7 @@ export default definePlugin({
     name: "TypingTweaks",
     description: "Show avatars and role colours in the typing indicator",
     tags: ["Appearance", "Customisation"],
-    authors: [Devs.zt, Devs.sadan, EquicordDevs.MrDiamond],
+    authors: [Devs.zt, Devs.sadan, PenguincordDevs.MrDiamond],
     settings,
     isModified: true,
 

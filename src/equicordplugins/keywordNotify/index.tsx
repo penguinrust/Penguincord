@@ -8,10 +8,19 @@ import "./style.css";
 
 import { DataStore } from "@api/index";
 import { definePluginSettings } from "@api/Settings";
+<<<<<<< HEAD
 import { Button } from "@components/Button";
 import ErrorBoundary from "@components/ErrorBoundary";
 import { DoubleCheckmarkIcon } from "@components/Icons";
 import { EquicordDevs } from "@utils/constants";
+=======
+import { Button, TextButton } from "@components/Button";
+import { Flex } from "@components/Flex";
+import { FormSwitch } from "@components/FormSwitch";
+import { Heading } from "@components/Heading";
+import { DeleteIcon } from "@components/Icons";
+import { PenguincordDevs } from "@utils/constants";
+>>>>>>> 81c92ec9d (So much done that i cant remember)
 import { classNameFactory } from "@utils/css";
 import { classes } from "@utils/misc";
 import definePlugin, { OptionType } from "@utils/types";
@@ -152,7 +161,11 @@ const settings = definePluginSettings({
 
 export default definePlugin({
     name: "KeywordNotify",
+<<<<<<< HEAD
     authors: [EquicordDevs.camila314, EquicordDevs.x3rt, EquicordDevs.benjas333],
+=======
+    authors: [PenguincordDevs.camila314, PenguincordDevs.x3rt],
+>>>>>>> 81c92ec9d (So much done that i cant remember)
     description: "Sends a notification if a given message matches certain keywords or regexes",
     settings,
     patches: [

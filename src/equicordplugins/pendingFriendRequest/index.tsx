@@ -5,7 +5,7 @@
  */
 
 import type { NavContextMenuPatchCallback } from "@api/ContextMenu";
-import { EquicordDevs } from "@utils/constants";
+import { PenguincordDevs } from "@utils/constants";
 import definePlugin from "@utils/types";
 import { RelationshipType } from "@vencord/discord-types/enums";
 import { findByPropsLazy } from "@webpack";
@@ -37,8 +37,12 @@ const userContextPatch: NavContextMenuPatchCallback = (children, { user }) => {
 export default definePlugin({
     name: "CancelFriendRequest",
     description: "Adds a way to cancel outgoing friend requests from profiles.",
+<<<<<<< HEAD
     authors: [EquicordDevs.omaw],
     tags: ["Utility"],
+=======
+    authors: [PenguincordDevs.omaw],
+>>>>>>> 81c92ec9d (So much done that i cant remember)
 
     contextMenus: {
         "user-profile-overflow-menu": userContextPatch

@@ -6,6 +6,7 @@
 
 import type { MessageSendListener } from "@api/MessageEvents";
 import { definePluginSettings } from "@api/Settings";
+<<<<<<< HEAD
 import { EquicordDevs } from "@utils/constants";
 import { copyWithToast, getCurrentChannel, insertTextIntoChatInputBox, sendMessage } from "@utils/discord";
 import { Logger } from "@utils/Logger";
@@ -13,6 +14,12 @@ import { sleep } from "@utils/misc";
 import definePlugin, { makeRange, OptionType } from "@utils/types";
 import type { Channel } from "@vencord/discord-types";
 import { ChannelStore, ComponentDispatch, PermissionsBits, PermissionStore, Toasts, UserStore } from "@webpack/common";
+=======
+import { PenguincordDevs } from "@utils/constants";
+import { getCurrentChannel, sendMessage } from "@utils/discord";
+import definePlugin, { OptionType } from "@utils/types";
+import { ChannelStore, ComponentDispatch, PermissionsBits, UserStore } from "@webpack/common";
+>>>>>>> 81c92ec9d (So much done that i cant remember)
 
 import { splitMessage, type SplitMode } from "./splitMessage";
 
@@ -148,8 +155,13 @@ export default definePlugin({
     name: "SplitLargeMessages",
     description: "Splits oversized messages into Discord-sized chunks before sending.",
     dependencies: ["MessageEventsAPI"],
+<<<<<<< HEAD
     tags: ["Chat", "Utility"],
     authors: [EquicordDevs.Reycko, EquicordDevs.justjxke],
+=======
+    tags: ["Appearance", "Customisation", "Chat"],
+    authors: [PenguincordDevs.Reycko],
+>>>>>>> 81c92ec9d (So much done that i cant remember)
     settings,
     onBeforeMessageSend: listener,
 

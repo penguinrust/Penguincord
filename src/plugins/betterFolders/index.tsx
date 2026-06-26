@@ -19,7 +19,11 @@
 import "./style.css";
 
 import { definePluginSettings } from "@api/Settings";
+<<<<<<< HEAD
 import { Devs } from "@utils/constants";
+=======
+import { Devs, PenguincordDevs } from "@utils/constants";
+>>>>>>> 81c92ec9d (So much done that i cant remember)
 import { getIntlMessage } from "@utils/discord";
 import { Logger } from "@utils/Logger";
 import definePlugin, { OptionType } from "@utils/types";
@@ -142,7 +146,12 @@ const GRID_STYLE_NAME = "vc-betterFolders-sidebar-grid";
 export default definePlugin({
     name: "BetterFolders",
     description: "Shows server folders on dedicated sidebar and adds folder related improvements",
+<<<<<<< HEAD
     authors: [Devs.juby, Devs.AutumnVN, Devs.Nuckyz],
+=======
+    tags: ["Organisation", "Servers", "Appearance"],
+    authors: [Devs.juby, Devs.AutumnVN, Devs.Nuckyz, PenguincordDevs.justjxke],
+>>>>>>> 81c92ec9d (So much done that i cant remember)
     isModified: true,
     tags: ["Organisation", "Servers", "Appearance"],
     settings,

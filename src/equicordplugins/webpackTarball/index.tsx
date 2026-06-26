@@ -14,7 +14,7 @@ import { makeLazy } from "@utils/lazy";
 import definePlugin, { OptionType } from "@utils/types";
 import { RenderModalProps } from "@vencord/discord-types";
 import { findByProps, wreq } from "@webpack";
-import { Button, Modal,openModal, Timestamp, useState } from "@webpack/common";
+import { Button, Modal, openModal, Timestamp, useState } from "@webpack/common";
 
 import TarFile from "./tar";
 import * as Webpack from "./webpack";
@@ -62,7 +62,7 @@ async function saveTar(patched: boolean) {
     const { buildNumber, builtAt } = getBuildNumber();
     const mtime = (builtAt.getTime() / 1000) | 0;
 
-    const root = patched ? `equicord-${buildNumber}` : `discord-${buildNumber}`;
+    const root = patched ? `penguincord-${buildNumber}` : `discord-${buildNumber}`;
 
     for (const [id, module] of Object.entries(wreq.m)) {
         const patchedSrc = Function.toString.call(module);
