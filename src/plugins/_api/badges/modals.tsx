@@ -90,7 +90,7 @@ export function PenguincordDonorModal() {
                     >
                         <Flex justifyContent="center" alignItems="center" gap="0.5em">
                             <Heart />
-                            Penguincord Donor
+                            cool person
                         </Flex>
                     </Heading>
                 }
@@ -112,10 +112,10 @@ export function PenguincordDonorModal() {
                     </Flex>
                     <div style={{ padding: "1em" }}>
                         <Paragraph>
-                            This Badge is a special perk for Penguincord (Not Vencord) Donors
+                            This Badge is a special perk for me and my friends as this client mod isn't supposed to be used by anyone else
                         </Paragraph>
                         <Paragraph className={Margins.top20}>
-                            Please consider supporting the development of Penguincord by becoming a donor. It would mean a lot! :3
+                            Please consider messaging me telling me how great my client mod is it will make me happy
                         </Paragraph>
                     </div>
                 </div>
