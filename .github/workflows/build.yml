@@ -16,7 +16,7 @@ permissions:
 
 jobs:
     Build:
-        name: Build Testcord
+        name: Build Penguincord
         runs-on: ubuntu-latest
 
         steps:
