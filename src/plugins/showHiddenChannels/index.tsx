@@ -84,10 +84,14 @@ export default definePlugin({
     description: "Show channels that you do not have access to view.",
     tags: ["Servers", "Utility"],
 <<<<<<< HEAD
+<<<<<<< HEAD
     authors: [Devs.BigDuck, Devs.AverageReactEnjoyer, Devs.D3SOX, Devs.Ven, Devs.Nuckyz, Devs.Nickyux, Devs.Rini, EquicordDevs.Oggetto],
 =======
     authors: [Devs.BigDuck, Devs.AverageReactEnjoyer, Devs.D3SOX, Devs.Ven, Devs.Nuckyz, Devs.Nickyux, Devs.dzshn, PenguincordDevs.Oggetto],
 >>>>>>> 81c92ec9d (So much done that i cant remember)
+=======
+    authors: [Devs.BigDuck, Devs.AverageReactEnjoyer, Devs.D3SOX, Devs.Ven, Devs.Nuckyz, Devs.Nickyux, Devs.dzshn, PenguincordDevs.Oggetto],
+>>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
     isModified: true,
     settings,
 

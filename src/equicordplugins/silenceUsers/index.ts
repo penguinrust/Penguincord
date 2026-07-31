@@ -57,11 +57,15 @@ export default definePlugin({
     name: "SilenceUsers",
     description: "Silences @mention pings and server badge counts from specific users. Regular messages and DMs are untouched.",
 <<<<<<< HEAD
+<<<<<<< HEAD
     authors: [EquicordDevs.dka],
     tags: ["Notifications"],
 =======
     authors: [PenguincordDevs.dka],
 >>>>>>> 81c92ec9d (So much done that i cant remember)
+=======
+    authors: [PenguincordDevs.dka],
+>>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
     settings,
     start() {
         FluxDispatcher.addInterceptor(interceptor);

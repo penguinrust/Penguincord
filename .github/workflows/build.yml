@@ -18,7 +18,10 @@ jobs:
 
 =======
             - uses: actions/checkout@v6
+<<<<<<< HEAD
 >>>>>>> 7241c1b58 (Refactor build.yml for improved release handling)
+=======
+>>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
             - uses: pnpm/action-setup@v6
             - name: Use Node.js 24
               uses: actions/setup-node@v6

@@ -97,6 +97,7 @@ function GameActivityToggleButton(props: UserAreaRenderProps) {
     const showCurrentGame = ShowCurrentGame.useSetting();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     const connectedAccounts = useStateFromStores([ConnectedAccountsStore], () => ConnectedAccountsStore.getAccounts());
     const spotifyAccounts = connectedAccounts.filter(account => account.type === "spotify" && !account.revoked);
     // The update is an API request which takes a bit to update the store, so we have to use our own state to reflect the change immediately
@@ -124,6 +125,9 @@ function GameActivityToggleButton(props: UserAreaRenderProps) {
         return <Button {...buttonProps} />;
 
     const spotifyAccount = spotifyAccounts[0];
+=======
+    if (location !== "PANEL" && isPluginEnabled(EquicordToolbox.name)) return null;
+>>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
 
     return (
         <Popout

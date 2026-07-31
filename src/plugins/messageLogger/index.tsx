@@ -428,10 +428,14 @@ export default definePlugin({
     description: "Temporarily logs deleted and edited messages.",
     tags: ["Chat", "Utility"],
 <<<<<<< HEAD
+<<<<<<< HEAD
     authors: [Devs.rushii, Devs.Ven, Devs.AutumnVN, Devs.Nickyux, Devs.Kyuuhachi, Devs.sadan, EquicordDevs.justjxke],
 =======
     authors: [Devs.rushii, Devs.Ven, Devs.AutumnVN, Devs.Nickyux, Devs.Kyuuhachi, PenguincordDevs.justjxke],
 >>>>>>> 81c92ec9d (So much done that i cant remember)
+=======
+    authors: [Devs.rushii, Devs.Ven, Devs.AutumnVN, Devs.Nickyux, Devs.Kyuuhachi, PenguincordDevs.justjxke],
+>>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
     dependencies: ["MessageUpdaterAPI"],
     isModified: true,
     settings,

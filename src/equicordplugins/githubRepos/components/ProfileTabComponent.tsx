@@ -14,7 +14,10 @@ import { React, useEffect, UserProfileStore, useState } from "@webpack/common";
 import { fetchReposByUserId, fetchReposByUsername, fetchUserInfo, GitHubUserInfo } from "@equicordplugins/githubRepos/githubApi";
 import { GitHubRepo } from "@equicordplugins/githubRepos/types";
 import { openModal, React, useEffect, UserProfileStore, useState } from "@webpack/common";
+<<<<<<< HEAD
 >>>>>>> 81c92ec9d (So much done that i cant remember)
+=======
+>>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
 
 import { cl, settings } from "..";
 import { RepoCard } from "./RepoCard";

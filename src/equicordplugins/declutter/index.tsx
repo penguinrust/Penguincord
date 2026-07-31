@@ -163,7 +163,7 @@ export default definePlugin({
     description:
         "Cleans up Discord by removing non-essential UI elements like profile effects, shop tabs, boosts, and more.",
     tags: ["Appearance", "Customisation"],
-    authors: [EquicordDevs.Leon135, Devs.prism, Devs.Kyuuhachi],
+    authors: [PenguincordDevs.Leon135, Devs.prism, Devs.Kyuuhachi],
     start() {
         if (isPluginEnabled("Decor") && settings.store.removeAvatarDecoration) {
             settings.store.removeAvatarDecoration = false;

@@ -15,10 +15,14 @@ import definePlugin, { OptionType } from "@utils/types";
 import { Message, User } from "@vencord/discord-types";
 import { findByPropsLazy, findCssClassesLazy } from "@webpack";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Button, ChannelStore, Menu, openModal, showToast, Toasts, Tooltip, useEffect, UserStore, useState } from "@webpack/common";
 =======
 import { Button, Menu, openModal, showToast, Toasts, Tooltip, useEffect, UserStore, useState } from "@webpack/common";
 >>>>>>> 81c92ec9d (So much done that i cant remember)
+=======
+import { Button, Menu, openModal, showToast, Toasts, Tooltip, useEffect, UserStore, useState } from "@webpack/common";
+>>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
 
 import { deleteTimezone, getTimezone, loadDatabaseTimezones, setUserDatabaseTimezone } from "./database";
 import { SetTimezoneModal } from "./TimezoneModal";

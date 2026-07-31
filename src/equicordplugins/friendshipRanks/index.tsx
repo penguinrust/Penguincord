@@ -17,10 +17,14 @@ import { classNameFactory } from "@utils/css";
 import definePlugin, { OptionType } from "@utils/types";
 import { RenderModalProps } from "@vencord/discord-types";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Forms, Modal, openModal, RelationshipStore, Tooltip, useStateFromStores } from "@webpack/common";
 =======
 import { Forms, Modal, openModal, RelationshipStore } from "@webpack/common";
 >>>>>>> 81c92ec9d (So much done that i cant remember)
+=======
+import { Forms, Modal, openModal, RelationshipStore } from "@webpack/common";
+>>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
 
 interface rankInfo {
     title: string;

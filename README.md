@@ -94,6 +94,7 @@ Thank you to [Vendicated](https://github.com/Vendicated) for creating [Vencord](
 <a href="https://star-history.com/#Penguincord/Penguincord&Timeline">
   <picture>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Equicord/Equicord&type=Timeline&theme=dark&sealed_token=64drv2U7WiV6dQ5VRbOZdxHT3mRzxUzhVvfm5qt1VRpGjVPje0PbObjibX2FYe4zd-h36lCAGZ873gAgb_5_tAzUBixUVbtaLHqy1fNH6PkQP_PqPdKztatlI2s17T9IUFzRyhYynmJ1-H4idFFzEAMN1gRZlVvvmJ71P0LovJPOIqTT7uHIubWcHzxC" />
     <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Equicord/Equicord&type=Timeline&sealed_token=64drv2U7WiV6dQ5VRbOZdxHT3mRzxUzhVvfm5qt1VRpGjVPje0PbObjibX2FYe4zd-h36lCAGZ873gAgb_5_tAzUBixUVbtaLHqy1fNH6PkQP_PqPdKztatlI2s17T9IUFzRyhYynmJ1-H4idFFzEAMN1gRZlVvvmJ71P0LovJPOIqTT7uHIubWcHzxC" />
     <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Equicord/Equicord&type=Timeline&sealed_token=64drv2U7WiV6dQ5VRbOZdxHT3mRzxUzhVvfm5qt1VRpGjVPje0PbObjibX2FYe4zd-h36lCAGZ873gAgb_5_tAzUBixUVbtaLHqy1fNH6PkQP_PqPdKztatlI2s17T9IUFzRyhYynmJ1-H4idFFzEAMN1gRZlVvvmJ71P0LovJPOIqTT7uHIubWcHzxC" />
@@ -102,6 +103,11 @@ Thank you to [Vendicated](https://github.com/Vendicated) for creating [Vencord](
     <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Penguincord/Penguincord&type=Timeline" />
     <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Penguincord/Penguincord&type=Timeline" />
 >>>>>>> 81c92ec9d (So much done that i cant remember)
+=======
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Penguincord/Penguincord&type=Timeline&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Penguincord/Penguincord&type=Timeline" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Penguincord/Penguincord&type=Timeline" />
+>>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
   </picture>
 </a>
 

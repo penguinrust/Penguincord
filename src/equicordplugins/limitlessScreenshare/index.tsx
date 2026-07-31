@@ -5,6 +5,7 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import "./style.css";
 
 import { EquicordDevs } from "@utils/constants";
@@ -12,6 +13,8 @@ import { classNameFactory } from "@utils/css";
 import definePlugin from "@utils/types";
 import { MediaEngineStore, Menu } from "@webpack/common";
 =======
+=======
+>>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
 import { definePluginSettings } from "@api/Settings";
 import { PenguincordDevs } from "@utils/constants";
 import definePlugin, { OptionType } from "@utils/types";

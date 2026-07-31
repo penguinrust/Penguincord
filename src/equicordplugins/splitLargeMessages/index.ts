@@ -7,6 +7,7 @@
 import type { MessageSendListener } from "@api/MessageEvents";
 import { definePluginSettings } from "@api/Settings";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { EquicordDevs } from "@utils/constants";
 import { copyWithToast, getCurrentChannel, insertTextIntoChatInputBox, sendMessage } from "@utils/discord";
 import { Logger } from "@utils/Logger";
@@ -15,6 +16,8 @@ import definePlugin, { makeRange, OptionType } from "@utils/types";
 import type { Channel } from "@vencord/discord-types";
 import { ChannelStore, ComponentDispatch, PermissionsBits, PermissionStore, Toasts, UserStore } from "@webpack/common";
 =======
+=======
+>>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
 import { PenguincordDevs } from "@utils/constants";
 import { getCurrentChannel, sendMessage } from "@utils/discord";
 import definePlugin, { OptionType } from "@utils/types";
@@ -161,7 +164,10 @@ export default definePlugin({
 =======
     tags: ["Appearance", "Customisation", "Chat"],
     authors: [PenguincordDevs.Reycko],
+<<<<<<< HEAD
 >>>>>>> 81c92ec9d (So much done that i cant remember)
+=======
+>>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
     settings,
     onBeforeMessageSend: listener,
 

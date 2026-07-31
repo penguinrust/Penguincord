@@ -85,6 +85,7 @@ export default definePlugin({
         PenguincordDevs.qouesm,
         Devs.RyanCaoDev,
 <<<<<<< HEAD
+<<<<<<< HEAD
         EquicordDevs.Prince527,
         EquicordDevs.creations,
         EquicordDevs.Star123451,
@@ -92,6 +93,10 @@ export default definePlugin({
         PenguincordDevs.Prince527,
         PenguincordDevs.creations,
 >>>>>>> 81c92ec9d (So much done that i cant remember)
+=======
+        PenguincordDevs.Prince527,
+        PenguincordDevs.creations,
+>>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
     ],
     reporterTestable: ReporterTestable.None,
 
