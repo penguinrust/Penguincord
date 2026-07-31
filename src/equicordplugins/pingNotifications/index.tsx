@@ -6,7 +6,7 @@
 
 import { showNotification } from "@api/Notifications";
 import { definePluginSettings } from "@api/Settings";
-import { PenguincordDevs } from "@utils/constants";
+import { EquicordDevs } from "@utils/constants";
 import definePlugin, { OptionType } from "@utils/types";
 import { findStoreLazy } from "@webpack";
 import {
@@ -93,7 +93,7 @@ export default definePlugin({
     name: "PingNotifications",
     description: "Customizable notifications with improved mention formatting",
     tags: ["Chat", "Friends", "Notifications", "Servers"],
-    authors: [PenguincordDevs.smuki],
+    authors: [EquicordDevs.smuki],
     settings,
 
     flux: {

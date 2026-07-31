@@ -20,7 +20,7 @@ import { isPluginEnabled } from "@api/PluginManager";
 import { definePluginSettings } from "@api/Settings";
 import { UserAreaRenderProps } from "@api/UserArea";
 import { getUserSettingLazy } from "@api/UserSettings";
-import EquicordToolbox from "@equicordplugins/EquicordToolbox";
+import equicordToolbox from "@equicordplugins/equicordToolbox";
 import { Devs } from "@utils/constants";
 import definePlugin, { OptionType } from "@utils/types";
 import { FluxStore } from "@vencord/discord-types";
@@ -54,10 +54,10 @@ const settings = definePluginSettings({
         description: "Where to show the game activity toggle button",
         options: [
             { label: "Next to Mute/Deafen", value: "PANEL", default: true },
-            { label: "Penguincord Toolbox", value: "TOOLBOX" }
+            { label: "Equicord Toolbox", value: "TOOLBOX" }
         ],
         get hidden() {
-            return !isPluginEnabled(EquicordToolbox.name);
+            return !isPluginEnabled(equicordToolbox.name);
         }
     }
 });
@@ -96,8 +96,6 @@ function GameActivityToggleButton(props: UserAreaRenderProps) {
     const { location } = settings.use(["location"]);
     const showCurrentGame = ShowCurrentGame.useSetting();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     const connectedAccounts = useStateFromStores([ConnectedAccountsStore], () => ConnectedAccountsStore.getAccounts());
     const spotifyAccounts = connectedAccounts.filter(account => account.type === "spotify" && !account.revoked);
     // The update is an API request which takes a bit to update the store, so we have to use our own state to reflect the change immediately
@@ -106,9 +104,6 @@ function GameActivityToggleButton(props: UserAreaRenderProps) {
     const buttonRef = useRef<HTMLButtonElement | null>(null);
 
     if (location !== "PANEL" && isPluginEnabled(equicordToolbox.name)) return null;
-=======
-    if (location !== "PANEL" && isPluginEnabled(EquicordToolbox.name)) return null;
->>>>>>> 81c92ec9d (So much done that i cant remember)
 
     const buttonProps = {
         tooltipText: showCurrentGame ? "Disable Game Activity" : "Enable Game Activity",
@@ -125,9 +120,6 @@ function GameActivityToggleButton(props: UserAreaRenderProps) {
         return <Button {...buttonProps} />;
 
     const spotifyAccount = spotifyAccounts[0];
-=======
-    if (location !== "PANEL" && isPluginEnabled(EquicordToolbox.name)) return null;
->>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
 
     return (
         <Popout

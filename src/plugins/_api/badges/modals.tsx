@@ -71,7 +71,7 @@ export function VencordDonorModal() {
     ));
 }
 
-export function PenguincordDonorModal() {
+export function EquicordDonorModal() {
     openModal(props => (
         <ErrorBoundary noop onError={() => {
             props.onClose();
@@ -90,7 +90,7 @@ export function PenguincordDonorModal() {
                     >
                         <Flex justifyContent="center" alignItems="center" gap="0.5em">
                             <Heart />
-                            cool person
+                            Equicord Donor
                         </Flex>
                     </Heading>
                 }
@@ -112,16 +112,16 @@ export function PenguincordDonorModal() {
                     </Flex>
                     <div style={{ padding: "1em" }}>
                         <Paragraph>
-                            This Badge is a special perk for me and my friends as this client mod isn't supposed to be used by anyone else
+                            This Badge is a special perk for Equicord (Not Vencord) Donors
                         </Paragraph>
                         <Paragraph className={Margins.top20}>
-                            Please consider messaging me telling me how great my client mod is it will make me happy
+                            Please consider supporting the development of Equicord by becoming a donor. It would mean a lot! :3
                         </Paragraph>
                     </div>
                 </div>
                 <div>
                     <Flex justifyContent="center" style={{ width: "100%" }}>
-                        <DonateButton penguincord={true} />
+                        <DonateButton equicord={true} />
                     </Flex>
                 </div>
             </Modal>
@@ -129,7 +129,7 @@ export function PenguincordDonorModal() {
     ));
 }
 
-export function PenguincordTranslatorModal() {
+export function EquicordTranslatorModal() {
     openModal(props => (
         <ErrorBoundary noop onError={() => {
             props.onClose();
@@ -146,7 +146,7 @@ export function PenguincordTranslatorModal() {
                         }}
                     >
                         <Flex justifyContent="center" alignItems="center" gap="0.5em">
-                            Penguincord Translator
+                            Equicord Translator
                         </Flex>
                     </Heading>
                 }
@@ -156,13 +156,13 @@ export function PenguincordTranslatorModal() {
                         <img
                             className="vc-translate-modal-icon"
                             role="presentation"
-                            src="https://badge.penguincord.org/translator.png"
+                            src="https://badge.equicord.org/translator.png"
                             alt=""
                         />
                     </Flex>
                     <div className="vc-translate-modal-paragraph">
                         <Paragraph>
-                            Awarded to contributors who expand Penguincord’s language support by translating content for the community.
+                            Awarded to contributors who expand Equicord’s language support by translating content for the community.
                         </Paragraph>
                     </div>
                 </div>

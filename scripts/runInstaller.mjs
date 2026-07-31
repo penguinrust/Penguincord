@@ -26,8 +26,8 @@ import { finished } from "stream/promises";
 import { fileURLToPath } from "url";
 
 const BASE_URL = "https://github.com/penguinrust/Installer/releases/latest/download/";
-const INSTALLER_PATH_DARWIN = "Equilotl.app/Contents/MacOS/Equilotl";
-const INSTALLER_APP_DARWIN = "Equilotl.app";
+const INSTALLER_PATH_DARWIN = "Penguincord.app/Contents/MacOS/Penguincord";
+const INSTALLER_APP_DARWIN = "Penguincord.app";
 
 const BASE_DIR = join(dirname(fileURLToPath(import.meta.url)), "..");
 const FILE_DIR = join(BASE_DIR, "dist", "Installer");
@@ -36,18 +36,18 @@ const ETAG_FILE = join(FILE_DIR, "etag.txt");
 function getFilename() {
     switch (process.platform) {
         case "win32":
-            return "EquilotlCli.exe";
+            return "PenguincordCli.exe";
         case "darwin":
             switch (process.arch) {
                 case "x64":
-                    return "Equilotl-darwin-x64.zip";
+                    return "Penguincord-darwin-x64.zip";
                 case "arm64":
-                    return "Equilotl-darwin-arm64.zip";
+                    return "Penguincord-darwin-arm64.zip";
                 default:
                     throw new Error("Unsupported macOS architecture: " + process.arch);
             }
         case "linux":
-            return "EquilotlCli-linux";
+            return "PenguincordCli-linux";
         default:
             throw new Error("Unsupported platform: " + process.platform);
     }
@@ -133,9 +133,9 @@ try {
         stdio: "inherit",
         env: {
             ...process.env,
-            EQUICORD_USER_DATA_DIR: BASE_DIR,
-            EQUICORD_DIRECTORY: join(BASE_DIR, "dist/desktop"),
-            EQUICORD_DEV_INSTALL: "1"
+            PENGUINCORD_USER_DATA_DIR: BASE_DIR,
+            PENGUINCORD_DIRECTORY: join(BASE_DIR, "dist/desktop"),
+            PENGUINCORD_DEV_INSTALL: "1"
         }
     });
 } catch {

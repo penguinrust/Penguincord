@@ -5,7 +5,7 @@
  */
 
 import { NavContextMenuPatchCallback } from "@api/ContextMenu";
-import { PenguincordDevs } from "@utils/constants";
+import { EquicordDevs } from "@utils/constants";
 import definePlugin from "@utils/types";
 import { Menu, NavigationRouter, RestAPI, Toasts, UserStore } from "@webpack/common";
 
@@ -136,7 +136,7 @@ export default definePlugin({
     name: "LastActive",
     description: "A plugin to jump to last active message from yourself or another user in a channel/server.",
     tags: ["Chat", "Utility"],
-    authors: [PenguincordDevs.Crxa],
+    authors: [EquicordDevs.Crxa],
     contextMenus: {
         "channel-context": ChannelContextMenuPatch,
         "user-context": UserContextMenuPatch,

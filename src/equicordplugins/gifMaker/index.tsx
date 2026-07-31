@@ -7,7 +7,7 @@
 import { NavContextMenuPatchCallback } from "@api/ContextMenu";
 import { definePluginSettings, migratePluginSettings } from "@api/Settings";
 import { Button } from "@components/Button";
-import { PenguincordDevs } from "@utils/constants";
+import { EquicordDevs } from "@utils/constants";
 import { classNameFactory } from "@utils/css";
 import { getCurrentChannel } from "@utils/discord";
 import { Logger } from "@utils/Logger";
@@ -479,16 +479,8 @@ migratePluginSettings("GifMaker", "gifMaker");
 export default definePlugin({
     name: "GifMaker",
     description: "Create and caption GIFs from any media in chat or the GIF picker.",
-<<<<<<< HEAD
-<<<<<<< HEAD
     authors: [EquicordDevs.Leon135, EquicordDevs.benjii],
     tags: ["Emotes", "Media"],
-=======
-    authors: [PenguincordDevs.Leon135, PenguincordDevs.benjii],
->>>>>>> 81c92ec9d (So much done that i cant remember)
-=======
-    authors: [PenguincordDevs.Leon135, PenguincordDevs.benjii],
->>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
     settings,
     managedStyle: css,
     contextMenus: {

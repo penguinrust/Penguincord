@@ -25,13 +25,16 @@ import { getEntryPoint, isPluginFile, parseDevs, parsePenguincordDevs, parseFile
 
     const args = process.argv.slice(2);
 
+    const equicordFlag = args.includes("--equicord");
     const penguincordFlag = args.includes("--penguincord");
     const vencordFlag = args.includes("--vencord");
 
     let dirs: string[];
 
-    if (penguincordFlag) {
+    if (equicordFlag) {
         dirs = ["src/equicordplugins/_core", "src/equicordplugins"];
+    } else if (penguincordFlag) {
+        dirs = ["src/penguincordplugins/_core", "src/penguincordplugins"];
     } else if (vencordFlag) {
         dirs = ["src/plugins", "src/plugins/_core"];
     } else {

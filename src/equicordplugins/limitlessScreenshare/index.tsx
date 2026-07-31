@@ -4,22 +4,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 import "./style.css";
 
 import { EquicordDevs } from "@utils/constants";
 import { classNameFactory } from "@utils/css";
 import definePlugin from "@utils/types";
 import { MediaEngineStore, Menu } from "@webpack/common";
-=======
-=======
->>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
-import { definePluginSettings } from "@api/Settings";
-import { PenguincordDevs } from "@utils/constants";
-import definePlugin, { OptionType } from "@utils/types";
-import { lodash, MediaEngineStore, Menu, useEffect, useMemo, useState } from "@webpack/common";
->>>>>>> 81c92ec9d (So much done that i cant remember)
 
 import { CustomRange } from "./CustomRange";
 import { MIN_FPS, MIN_RESOLUTION, settings } from "./settings";
@@ -53,7 +43,7 @@ const CustomPresetList = ({ onChange, initialValue, group, id, list }: CustomPre
 export default definePlugin({
     name: "LimitlessScreenshare",
     description: "Adds a slider for screenshare resolution and fps.",
-    authors: [PenguincordDevs.KawaiianPizza],
+    authors: [EquicordDevs.KawaiianPizza],
     tags: ["Utility", "Voice"],
     settings,
     patches: [

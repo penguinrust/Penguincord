@@ -59,7 +59,8 @@ function validateUrl(url: string) {
 }
 
 const cloudBackendOptions = [
-    { label: "Penguincord Cloud", value: "https://cloud.penguincord.org/" },
+    { label: "Equicord Cloud", value: "https://cloud.equicord.org/" },
+    { label: "Penguincord Cloud", value: "https://cloud.wither.lol/" },
     { label: "Vencord Cloud", value: "https://api.vencord.dev/" }
 ];
 
@@ -97,7 +98,7 @@ function CloudTab() {
             </Paragraph>
 
             <Notice.Info className={Margins.bottom16}>
-                We use our own <Link href="https://github.com/penguinrust/Equicloud">Equicloud backend</Link> with enhanced features.
+                We use our own <Link href="https://github.com/equicord/equicord">Equicloud backend</Link> with enhanced features.
                 View our <Link href="https://penguincord.org/cloud/policy">privacy policy</Link> to see what we store and how we use your data.
                 Equicloud is BSD 3.0 licensed, so you can self-host if preferred.
             </Notice.Info>

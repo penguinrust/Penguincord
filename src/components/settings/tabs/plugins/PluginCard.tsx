@@ -33,6 +33,7 @@ export function PluginCard({ plugin, disabled, onRestartNeeded, onMouseEnter, on
     const settings = Settings.plugins[plugin.name];
     const pluginMeta = PluginMeta[plugin.name];
     const isEquicordPlugin = pluginMeta.folderName.startsWith("src/equicordplugins/") ?? false;
+    const isPenguincordPlugin = pluginMeta.folderName.startsWith("src/penguincordplugins/") ?? false;
     const isVencordPlugin = pluginMeta.folderName.startsWith("src/plugins/") ?? false;
     const isUserPlugin = pluginMeta?.userPlugin ?? false;
     const isModifiedPlugin = plugin.isModified ?? false;
@@ -95,6 +96,12 @@ export function PluginCard({ plugin, disabled, onRestartNeeded, onMouseEnter, on
             src: "https://equicord.org/assets/icons/equicord/modified.png",
             alt: "Modified",
             title: "Modified Vencord Plugin"
+        },
+        {
+            condition: isPenguincordPlugin,
+            src: "https://wither.lol/assets/favicon.png",
+            alt: "Penguincord",
+            title: "Penguincord Plugin"
         },
         {
             condition: isEquicordPlugin,

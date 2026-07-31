@@ -16,8 +16,7 @@ import {
     RestAPI,
     useEffect,
     useRef,
-    useState
-} from "@webpack/common";
+    useState } from "@webpack/common";
 
 import { cl } from "..";
 

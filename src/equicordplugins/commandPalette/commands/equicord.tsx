@@ -8,23 +8,23 @@ import type { PaletteCommand } from "../api/types";
 import { BoltIcon, GearIcon, PaintIcon, RestartIcon } from "../ui/icons";
 import { openSettingsPage } from "./openSettings";
 
-const SECTION = "Penguincord";
+const SECTION = "Equicord";
 
 export const equicordCommands: PaletteCommand[] = [
     {
-        id: "penguincord.settings",
-        title: "Open Penguincord Settings",
+        id: "equicord.settings",
+        title: "Open Equicord Settings",
         section: SECTION,
-        keywords: ["penguincord", "vencord", "settings"],
+        keywords: ["equicord", "vencord", "settings"],
         icon: GearIcon,
         actions: [{
             id: "run",
-            label: "Open Penguincord Settings",
-            run: () => void openSettingsPage("penguincord_main")
+            label: "Open Equicord Settings",
+            run: () => void openSettingsPage("equicord_main")
         }]
     },
     {
-        id: "penguincord.quickCss",
+        id: "equicord.quickCss",
         title: "Open QuickCSS",
         section: SECTION,
         keywords: ["css", "quickcss", "editor", "style"],
@@ -36,7 +36,7 @@ export const equicordCommands: PaletteCommand[] = [
         }]
     },
     {
-        id: "penguincord.updater",
+        id: "equicord.updater",
         title: "Open Updater",
         section: SECTION,
         keywords: ["update", "updater", "version"],
@@ -45,11 +45,11 @@ export const equicordCommands: PaletteCommand[] = [
         actions: [{
             id: "run",
             label: "Open Updater",
-            run: () => void openSettingsPage("penguincord_updater")
+            run: () => void openSettingsPage("equicord_updater")
         }]
     },
     {
-        id: "penguincord.changelog",
+        id: "equicord.changelog",
         title: "Open Changelog",
         section: SECTION,
         keywords: ["changelog", "news", "whats new"],
@@ -57,11 +57,11 @@ export const equicordCommands: PaletteCommand[] = [
         actions: [{
             id: "run",
             label: "Open Changelog",
-            run: () => void openSettingsPage("penguincord_changelog")
+            run: () => void openSettingsPage("equicord_changelog")
         }]
     },
     {
-        id: "penguincord.restart",
+        id: "equicord.restart",
         title: "Restart Discord",
         section: SECTION,
         keywords: ["restart", "reload", "refresh"],

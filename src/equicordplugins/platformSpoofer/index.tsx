@@ -6,7 +6,7 @@
 
 import { definePluginSettings } from "@api/Settings";
 import { Notice } from "@components/Notice";
-import { PenguincordDevs } from "@utils/constants";
+import { EquicordDevs } from "@utils/constants";
 import definePlugin, { OptionType } from "@utils/types";
 import { UserStore } from "@webpack/common";
 
@@ -53,7 +53,7 @@ export default definePlugin({
     name: "PlatformSpoofer",
     description: "Spoof what platform or device you're on",
     tags: ["Utility"],
-    authors: [PenguincordDevs.Drag, PenguincordDevs.neoarz],
+    authors: [EquicordDevs.Drag, EquicordDevs.neoarz],
     settingsAboutComponent: () => (
         <Notice.Warning>
             We can't guarantee this plugin won't get you warned or banned.
@@ -73,20 +73,7 @@ export default definePlugin({
                     replace: "{...$1,...$self.getPlatform(true)}"
                 },
             ]
-<<<<<<< HEAD
         }
-=======
-        },
-        {
-            find: '"2025-01-virtual-currency-rollout"',
-            replacement: [
-                {
-                    match: /(?<=\}\),)(\i)/g,
-                    replace: "$1=e=>({enabled:true}),_penguincord_$1"
-                }
-            ]
-        },
->>>>>>> 81c92ec9d (So much done that i cant remember)
     ],
     getPlatform(bypass, userId?: any) {
         const platform = settings.store.platform ?? "desktop";

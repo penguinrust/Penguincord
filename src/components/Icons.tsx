@@ -1116,7 +1116,7 @@ export function HammerAndChiselIcon(props: IconProps) {
     );
 }
 
-export function PenguincordIcon(props: IconProps) {
+export function EquicordIcon(props: IconProps) {
     return (
         <Icon
             {...props}
@@ -1135,6 +1135,16 @@ export function PenguincordIcon(props: IconProps) {
                 transform="translate(318.98 -15.92) rotate(65)"
                 d="M171.98,152.39h0c17.66,0,32,14.34,32,32v148h-64v-148c0-17.66,14.34-32,32-32Z"
             />
+        </Icon>
+    );
+}
+
+export function PenguincordIcon(props: IconProps) {
+    return (
+        <Icon
+            {...props}
+            viewBox="0 0 442.07 442.46"
+        >
         </Icon>
     );
 }

@@ -13,7 +13,7 @@ import { HeadingSecondary } from "@components/Heading";
 import { Notice } from "@components/Notice";
 import decor from "@plugins/decor";
 import { classNameFactory } from "@utils/css";
-import { Devs, PenguincordDevs } from "@utils/index";
+import { Devs, EquicordDevs } from "@utils/index";
 import definePlugin, { OptionType } from "@utils/types";
 import { Alerts } from "@webpack/common";
 
@@ -163,7 +163,7 @@ export default definePlugin({
     description:
         "Cleans up Discord by removing non-essential UI elements like profile effects, shop tabs, boosts, and more.",
     tags: ["Appearance", "Customisation"],
-    authors: [PenguincordDevs.Leon135, Devs.prism, Devs.Kyuuhachi],
+    authors: [EquicordDevs.Leon135, Devs.prism, Devs.Kyuuhachi, Devs.SomeAspy],
     start() {
         if (isPluginEnabled("Decor") && settings.store.removeAvatarDecoration) {
             settings.store.removeAvatarDecoration = false;

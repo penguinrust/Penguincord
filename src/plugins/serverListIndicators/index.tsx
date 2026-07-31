@@ -22,7 +22,7 @@ import { addServerListElement, removeServerListElement, ServerListRenderPosition
 import { definePluginSettings } from "@api/Settings";
 import { BaseText } from "@components/BaseText";
 import ErrorBoundary from "@components/ErrorBoundary";
-import { Devs, PenguincordDevs } from "@utils/constants";
+import { Devs, EquicordDevs } from "@utils/constants";
 import { classNameFactory } from "@utils/css";
 import definePlugin, { OptionType } from "@utils/types";
 import { findStoreLazy } from "@webpack";
@@ -142,15 +142,7 @@ export default definePlugin({
     name: "ServerListIndicators",
     description: "Add online friend count or server count in the server list",
     tags: ["Servers", "Appearance"],
-<<<<<<< HEAD
-<<<<<<< HEAD
     authors: [Devs.Rini, EquicordDevs.Panniku],
-=======
-    authors: [Devs.dzshn, PenguincordDevs.Panniku],
->>>>>>> 81c92ec9d (So much done that i cant remember)
-=======
-    authors: [Devs.dzshn, PenguincordDevs.Panniku],
->>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
     dependencies: ["ServerListAPI"],
     settings,
 

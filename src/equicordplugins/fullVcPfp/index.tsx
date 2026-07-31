@@ -4,17 +4,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { EquicordDevs } from "@utils/constants";
-=======
-import { disableStyle, enableStyle } from "@api/Styles";
-import { PenguincordDevs } from "@utils/constants";
->>>>>>> 81c92ec9d (So much done that i cant remember)
-=======
-import { disableStyle, enableStyle } from "@api/Styles";
-import { PenguincordDevs } from "@utils/constants";
->>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
 import { getUserAvatarUrl } from "@utils/misc";
 import definePlugin from "@utils/types";
 import { ChannelRTCStore, ChannelStore, UserStore, VoiceStateStore } from "@webpack/common";
@@ -25,16 +15,8 @@ export default definePlugin({
     name: "FullVCPFP",
     description: "Makes avatars take up the entire vc tile",
     tags: ["Appearance", "Voice"],
-<<<<<<< HEAD
-<<<<<<< HEAD
     authors: [EquicordDevs.mochienya],
     managedStyle: style,
-=======
-    authors: [PenguincordDevs.mochienya],
->>>>>>> 81c92ec9d (So much done that i cant remember)
-=======
-    authors: [PenguincordDevs.mochienya],
->>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
     patches: [
         {
             find: "\"data-selenium-video-tile\":",

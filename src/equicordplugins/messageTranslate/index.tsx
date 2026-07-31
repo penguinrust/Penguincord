@@ -6,16 +6,8 @@
 
 import "./styles.css";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { TranslateIcon } from "@plugins/translate/TranslateIcon";
 import { EquicordDevs } from "@utils/constants";
-=======
-import { PenguincordDevs } from "@utils/constants";
->>>>>>> 81c92ec9d (So much done that i cant remember)
-=======
-import { PenguincordDevs } from "@utils/constants";
->>>>>>> 6643588083d9631eaf62d9d4556dc532d634e4c3
 import { classNameFactory } from "@utils/css";
 import definePlugin from "@utils/types";
 import { ChannelStore, FluxDispatcher, MessageStore, Parser, UserStore } from "@webpack/common";
@@ -61,7 +53,7 @@ export default definePlugin({
     name: "MessageTranslate",
     description: "Auto translate messages to your language with caching, per-channel toggles, and more options.",
     tags: ["Chat", "Utility"],
-    authors: [PenguincordDevs.creations],
+    authors: [EquicordDevs.creations],
     settings,
 
     patches: [

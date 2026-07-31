@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-import { Devs, PenguincordDevs } from "@utils/constants";
+import { Devs, EquicordDevs } from "@utils/constants";
 import { getIntlMessage } from "@utils/discord";
 import definePlugin from "@utils/types";
 import { ComponentType, ReactNode } from "react";
@@ -19,7 +19,7 @@ export default definePlugin({
     name: "FavouriteAnything",
     description: "Favourite any image, video, or file attachment",
     tags: ["Chat", "Media"],
-    authors: [Devs.nin0dev, PenguincordDevs.davri],
+    authors: [Devs.nin0dev, EquicordDevs.davri],
     searchTerms: ["favorite"],
     managedStyle,
     patches: [

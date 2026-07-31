@@ -18,7 +18,7 @@
 
 export const REACT_GLOBAL = "Vencord.Webpack.Common.React";
 
-// Penguincord
+// Equicord
 export const SUPPORT_CHANNEL_ID = "1297590739911573585";
 export const GUILD_ID = "1173279886065029291";
 export const DONOR_ROLE_ID = "1173316879083896912";
@@ -28,6 +28,14 @@ export const EQUICORD_HELPERS = "1326406112144265257";
 export const VENCORD_CONTRIB_ROLE_ID = "1173343399470964856";
 export const EQUIBOT_USER_ID = "1243063117852835941";
 export const KNOWN_ISSUES_CHANNEL_ID = "1466558228379992266";
+
+// Penguincord
+export const PC_SUPPORT_CHANNEL_ID = "1297590739911573585";
+export const PC_GUILD_ID = "1173279886065029291";
+export const PC_DONOR_ROLE_ID = "1173316879083896912";
+export const PC_CONTRIB_ROLE_ID = "1222677964760682556";
+export const PENGUINCORD_TEAM = "1173520023239786538";
+export const PENGUINCORD_HELPERS = "1326406112144265257";
 
 // Vencord
 export const VC_SUPPORT_CHANNEL_ID = "1026515880080842772";
@@ -41,10 +49,10 @@ export const VC_KNOWN_ISSUES_CHANNEL_ID = "1257025907625951423";
 export const VESKTOP_SUPPORT_CHANNEL_ID = "1345457031426871417";
 export const VC_SUPPORT_CHANNEL_IDS = [VC_SUPPORT_CHANNEL_ID, VESKTOP_SUPPORT_CHANNEL_ID];
 
-export const GUILD_IDS = [GUILD_ID, VC_GUILD_ID];
-export const SUPPORT_CHANNEL_IDS = [SUPPORT_CHANNEL_ID, VC_SUPPORT_CHANNEL_ID];
-export const DONOR_ROLE_IDS = [DONOR_ROLE_ID, VC_DONOR_ROLE_ID];
-export const CONTRIB_ROLE_IDS = [CONTRIB_ROLE_ID, VENCORD_CONTRIB_ROLE_ID, VC_CONTRIB_ROLE_ID];
+export const GUILD_IDS = [GUILD_ID, VC_GUILD_ID, PC_GUILD_ID];
+export const SUPPORT_CHANNEL_IDS = [SUPPORT_CHANNEL_ID, VC_SUPPORT_CHANNEL_ID, PC_SUPPORT_CHANNEL_ID];
+export const DONOR_ROLE_IDS = [DONOR_ROLE_ID, VC_DONOR_ROLE_ID, PC_DONOR_ROLE_ID];
+export const CONTRIB_ROLE_IDS = [CONTRIB_ROLE_ID, VENCORD_CONTRIB_ROLE_ID, VC_CONTRIB_ROLE_ID, PC_CONTRIB_ROLE_ID];
 
 const platform = navigator.platform.toLowerCase();
 export const IS_WINDOWS = platform.startsWith("win");
@@ -684,7 +692,7 @@ export const Devs = /* #__PURE__*/ Object.freeze({
     }
 } satisfies Record<string, Dev>);
 
-export const PenguincordDevs = Object.freeze({
+export const EquicordDevs = Object.freeze({
     nobody: {
         name: "nobody",
         id: 0n
@@ -1416,6 +1424,13 @@ export const PenguincordDevs = Object.freeze({
     },
 } satisfies Record<string, Dev>);
 
+export const PenguinCordDevs = Object.freeze({
+    nobody: {
+        name: "nobody",
+        id: 0n
+    },
+} satisfies Record<string, Dev>);
+
 // iife so #__PURE__ works correctly
 export const VencordDevsById = /* #__PURE__*/ (() =>
     Object.freeze(Object.fromEntries(
@@ -1425,9 +1440,17 @@ export const VencordDevsById = /* #__PURE__*/ (() =>
     ))
 )() as Record<string, Dev>;
 
-export const PenguincordDevsById = /* #__PURE__*/ (() =>
+export const EquicordDevsById = /* #__PURE__*/ (() =>
     Object.freeze(Object.fromEntries(
-        Object.entries(PenguincordDevs)
+        Object.entries(EquicordDevs)
+            .filter(d => d[1].id !== 0n)
+            .map(([_, v]) => [v.id, v] as const)
+    ))
+)() as Record<string, Dev>;
+
+export const PenguinCordDevsById = /* #__PURE__*/ (() =>
+    Object.freeze(Object.fromEntries(
+        Object.entries(PenguinCordDevs)
             .filter(d => d[1].id !== 0n)
             .map(([_, v]) => [v.id, v] as const)
     ))

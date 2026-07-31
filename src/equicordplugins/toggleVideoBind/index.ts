@@ -5,7 +5,7 @@
  */
 
 import { definePluginSettings } from "@api/Settings";
-import { PenguincordDevs } from "@utils/constants";
+import { EquicordDevs } from "@utils/constants";
 import definePlugin, { OptionType } from "@utils/types";
 import { findByPropsLazy } from "@webpack";
 import { FluxDispatcher } from "@webpack/common";
@@ -60,7 +60,7 @@ export default definePlugin({
     name: "ToggleVideoBind",
     description: "Adds a customizable bind to toggle webcam.",
     tags: ["Utility", "Voice"],
-    authors: [PenguincordDevs.mochienya],
+    authors: [EquicordDevs.mochienya],
     settings,
     start() {
         document.addEventListener("keydown", handleKeydown);

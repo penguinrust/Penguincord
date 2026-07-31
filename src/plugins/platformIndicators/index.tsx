@@ -19,7 +19,7 @@
 import "./style.css";
 
 import { definePluginSettings, migratePluginSetting } from "@api/Settings";
-import { Devs, PenguincordDevs } from "@utils/constants";
+import { Devs, EquicordDevs } from "@utils/constants";
 import { classes } from "@utils/misc";
 import definePlugin, { OptionType } from "@utils/types";
 import { DiscordPlatform, User } from "@vencord/discord-types";
@@ -84,7 +84,7 @@ const PlatformIcon = ({ platform, status, small }) => {
     const { ConsoleIcon } = settings.store;
     if (platform === "embedded") {
         switch (ConsoleIcon) {
-            case "penguincord":
+            case "equicord":
                 Icon = Icons.embedded;
                 break;
             case "suncord":
@@ -200,8 +200,8 @@ const settings = definePluginSettings({
         restartNeeded: true,
         options: [
             {
-                label: "Penguincord",
-                value: "penguincord",
+                label: "Equicord",
+                value: "equicord",
                 default: true
             },
             {
@@ -221,7 +221,7 @@ export default definePlugin({
     description: "Adds platform indicators (Desktop, Mobile, Web...) to users",
     dependencies: ["MemberListDecoratorsAPI", "MessageDecorationsAPI", "NicknameIconsAPI"],
     tags: ["Appearance"],
-    authors: [Devs.kemo, Devs.TheSun, Devs.Nuckyz, Devs.Ven, PenguincordDevs.neoarz],
+    authors: [Devs.kemo, Devs.TheSun, Devs.Nuckyz, Devs.Ven, EquicordDevs.neoarz],
     isModified: true,
     settings,
     renderNicknameIcon(props) {

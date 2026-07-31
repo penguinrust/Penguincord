@@ -6,8 +6,8 @@
 
 import { definePluginSettings } from "@api/Settings";
 import { disableStyle, enableStyle } from "@api/Styles";
-import { AchievementsIcon, AppsIcon, CreditCardIcon, PenguincordIcon, GameControllerIcon, HammerAndChiselIcon, MainSettingsIcon, PencilSparkleIcon, UserIcon } from "@components/Icons";
-import { buildPluginMenuEntries, buildThemeMenuEntries } from "@equicordplugins/EquicordToolbox/menu";
+import { AchievementsIcon, AppsIcon, CreditCardIcon, EquicordIcon, GameControllerIcon, HammerAndChiselIcon, MainSettingsIcon, PencilSparkleIcon, UserIcon } from "@components/Icons";
+import { buildPluginMenuEntries, buildThemeMenuEntries } from "@equicordplugins/equicordToolbox/menu";
 import { Devs } from "@utils/constants";
 import { classNameFactory } from "@utils/css";
 import { getIntlMessage } from "@utils/discord";
@@ -26,7 +26,7 @@ const Classes = findCssClassesLazy("animating", "baseLayer", "bg", "layer", "lay
 const SECTION_ICONS: Record<string, Icon> = {
     profile_section: PencilSparkleIcon,
     user_section: UserIcon,
-    penguincord_section: PenguincordIcon,
+    equicord_section: EquicordIcon,
     billing_section: CreditCardIcon,
     app_section: AppsIcon,
     games_and_apps_section: GameControllerIcon,
@@ -206,8 +206,8 @@ export default definePlugin({
             if (!item?.props) continue;
             const { key, props } = item;
 
-            if (key === "penguincord_plugins" || key === "penguincord_themes") {
-                const children = key === "penguincord_plugins"
+            if (key === "equicord_plugins" || key === "equicord_themes") {
+                const children = key === "equicord_plugins"
                     ? buildPluginMenuEntries()
                     : buildThemeMenuEntries();
 

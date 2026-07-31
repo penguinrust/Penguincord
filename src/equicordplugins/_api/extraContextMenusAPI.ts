@@ -5,13 +5,13 @@
  */
 
 import { _openGifPickerContextMenu } from "@api/GifPickerContextMenu";
-import { PenguincordDevs } from "@utils/constants";
+import { EquicordDevs } from "@utils/constants";
 import definePlugin from "@utils/types";
 
 export default definePlugin({
     name: "ExtraContextMenusAPI",
     description: "API that adds more context menus to patch.",
-    authors: [PenguincordDevs.thororen],
+    authors: [EquicordDevs.thororen],
     required: true,
 
     patches: [

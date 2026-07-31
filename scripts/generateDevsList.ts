@@ -26,6 +26,7 @@ interface Dev {
 
 const devs = {} as Record<string, Dev>;
 const penguincordDevs = {} as Record<string, Dev>;
+const equicordDevs = {} as Record<string, Dev>;
 
 function getName(node: NamedDeclaration) {
     return node.name && isIdentifier(node.name) ? node.name.text : undefined;
@@ -72,24 +73,55 @@ function parseDevs() {
     throw new Error("Could not find Devs constant");
 }
 
+function parseEquicordDevs() {
+    const file = createSourceFile("constants.ts", readFileSync("src/utils/constants.ts", "utf8"), ScriptTarget.Latest);
+
+    for (const child of file.getChildAt(0).getChildren()) {
+        if (!isVariableStatement(child)) continue;
+
+        const devsDeclaration = child.declarationList.declarations.find(d => hasName(d, "EquicordDevs"));
+        if (!devsDeclaration?.initializer || !isCallExpression(devsDeclaration.initializer)) continue;
+
+        const value = devsDeclaration.initializer.arguments[0];
+
+        if (!isSatisfiesExpression(value) || !isObjectLiteralExpression(value.expression)) throw new Error("Failed to parse EquicordDevs: not an object literal");
+
+        for (const prop of value.expression.properties) {
+            const name = (prop.name as Identifier).text;
+            const value = isPropertyAssignment(prop) ? prop.initializer : prop;
+
+            if (!isObjectLiteralExpression(value)) throw new Error(`Failed to parse EquicordDevs: ${name} is not an object literal`);
+
+            equicordDevs[name] = {
+                name: (getObjectProp(value, "name") as StringLiteral).text,
+                id: (getObjectProp(value, "id") as BigIntLiteral).text.slice(0, -1)
+            };
+        }
+
+        return;
+    }
+
+    throw new Error("Could not find EquicordDevs constant");
+}
+
 function parsePenguincordDevs() {
     const file = createSourceFile("constants.ts", readFileSync("src/utils/constants.ts", "utf8"), ScriptTarget.Latest);
 
     for (const child of file.getChildAt(0).getChildren()) {
         if (!isVariableStatement(child)) continue;
 
-        const devsDeclaration = child.declarationList.declarations.find(d => hasName(d, "PenguincordDevs"));
+        const devsDeclaration = child.declarationList.declarations.find(d => hasName(d, "PenguinCordDevs"));
         if (!devsDeclaration?.initializer || !isCallExpression(devsDeclaration.initializer)) continue;
 
         const value = devsDeclaration.initializer.arguments[0];
 
-        if (!isSatisfiesExpression(value) || !isObjectLiteralExpression(value.expression)) throw new Error("Failed to parse PenguincordDevs: not an object literal");
+        if (!isSatisfiesExpression(value) || !isObjectLiteralExpression(value.expression)) throw new Error("Failed to parse PenguinCordDevs: not an object literal");
 
         for (const prop of value.expression.properties) {
             const name = (prop.name as Identifier).text;
             const value = isPropertyAssignment(prop) ? prop.initializer : prop;
 
-            if (!isObjectLiteralExpression(value)) throw new Error(`Failed to parse PenguincordDevs: ${name} is not an object literal`);
+            if (!isObjectLiteralExpression(value)) throw new Error(`Failed to parse PenguinCordDevs: ${name} is not an object literal`);
 
             penguincordDevs[name] = {
                 name: (getObjectProp(value, "name") as StringLiteral).text,
@@ -106,10 +138,12 @@ function parsePenguincordDevs() {
 (async () => {
     parseDevs();
     parsePenguincordDevs();
+    parseEquicordDevs();
 
     const allDevs = {
         vencord: devs,
         penguincord: penguincordDevs,
+        equicord: equicordDevs,
     };
 
     const data = JSON.stringify(allDevs, null, 2);
