@@ -24,7 +24,7 @@ import { openContributorModal } from "@components/settings/tabs";
 import { Devs } from "@utils/constants";
 import { copyWithToast } from "@utils/discord";
 import { Logger } from "@utils/Logger";
-import { shouldShowContributorBadge, shouldShowEquicordContributorBadge } from "@utils/misc";
+import { shouldShowContributorBadge, shouldShowEquicordContributorBadge, shouldShowPenguincordContributorBadge } from "@utils/misc";
 import definePlugin from "@utils/types";
 import { ContextMenuApi, Menu, Toasts, UserStore } from "@webpack/common";
 
@@ -66,7 +66,7 @@ const PenguincordContributorBadge: ProfileBadge = {
     description: "Penguincord Contributor",
     iconSrc: PENGUINCORD_CONTRIBUTOR_BADGE,
     position: BadgePosition.START,
-    shouldShow: ({ userId }) => shouldShowEquicordContributorBadge(userId),
+    shouldShow: ({ userId }) => shouldShowPenguincordContributorBadge(userId),
     onClick: (_, { userId }) => openContributorModal(UserStore.getUser(userId)),
     props: {
         style: {
