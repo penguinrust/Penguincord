@@ -20,7 +20,7 @@ import { isPluginEnabled } from "@api/PluginManager";
 import { definePluginSettings } from "@api/Settings";
 import { UserAreaRenderProps } from "@api/UserArea";
 import { getUserSettingLazy } from "@api/UserSettings";
-import equicordToolbox from "@equicordplugins/equicordToolbox";
+import equicordToolbox from "@equicordplugins/EquicordToolbox";
 import { Devs } from "@utils/constants";
 import definePlugin, { OptionType } from "@utils/types";
 import { FluxStore } from "@vencord/discord-types";
