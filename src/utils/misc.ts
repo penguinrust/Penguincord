@@ -19,7 +19,7 @@
 import { User } from "@vencord/discord-types";
 import { ChannelStore, GuildMemberStore, IconUtils } from "@webpack/common";
 
-import { EQUICORD_HELPERS, PENGUINCORD_HELPERS, PenguinCordDevsById, EquicordDevsById, PC_GUILD_ID, GUILD_ID, KNOWN_ISSUES_CHANNEL_ID, SUPPORT_CHANNEL_ID, VencordDevsById } from "./constants";
+import { EQUICORD_HELPERS, PENGUINCORD_HELPERS, PenguincordDevsById, EquicordDevsById, PC_GUILD_ID, GUILD_ID, KNOWN_ISSUES_CHANNEL_ID, SUPPORT_CHANNEL_ID, VencordDevsById } from "./constants";
 
 /**
  * Calls .join(" ") on the arguments
@@ -80,11 +80,11 @@ export function identity<T>(value: T): T {
 
 export const isPluginDev = (id: string) => Object.hasOwn(VencordDevsById, id);
 export const isEquicordPluginDev = (id: string) => Object.hasOwn(EquicordDevsById, id);
-export const isPenguincordPluginDev = (id: string) => Object.hasOwn(PenguinCordDevsById, id);
+export const isPenguincordPluginDev = (id: string) => Object.hasOwn(PenguincordDevsById, id);
 export const shouldShowContributorBadge = (id: string) => isPluginDev(id) && VencordDevsById[id].badge !== false;
-export const shouldShowPenguincordContributorBadge = (id: string) => isPluginDev(id) && PenguinCordDevsById[id].badge !== false;
+export const shouldShowPenguincordContributorBadge = (id: string) => isPluginDev(id) && PenguincordDevsById[id].badge !== false;
 export const shouldShowEquicordContributorBadge = (id: string) => isPluginDev(id) && EquicordDevsById[id].badge !== false;
-export const isAnyPluginDev = (id: string) => Object.hasOwn(VencordDevsById, id) || Object.hasOwn(EquicordDevsById, id) || Object.hasOwn(PenguinCordDevsById, id);
+export const isAnyPluginDev = (id: string) => Object.hasOwn(VencordDevsById, id) || Object.hasOwn(EquicordDevsById, id) || Object.hasOwn(PenguincordDevsById, id);
 
 export function pluralise(amount: number, singular: string, plural = singular + "s") {
     return amount === 1 ? `${amount} ${singular}` : `${amount} ${plural}`;
