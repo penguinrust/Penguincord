@@ -308,7 +308,7 @@ export default definePlugin({
                 ContextMenuApi.openContextMenu(event, () => <BadgeContextMenu badge={badge} />);
             },
             onClick() {
-                return badge.tooltip === "Penguincord Translator" ? EquicordTranslatorModal() : EquicordDonorModal();
+                return badge.tooltip === "Penguincord Translator" ? EquicordTranslatorModal() : PenguincordDonorModal();
             },
         } satisfies ProfileBadge));
     }
