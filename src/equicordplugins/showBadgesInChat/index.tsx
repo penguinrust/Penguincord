@@ -51,6 +51,20 @@ function CheckBadge({ badge, author }: { badge: string; author: User; }): JSX.El
                     ))}
                 </span>
             );
+        case "PenguincordDonor":
+            return (
+                <span style={{ order: settings.store.PenguincordDonorPosition }}>
+                    {badges.getPenguincordDonorBadges(author.id)?.map(badge => (
+                        <RoleIconComponent
+                            key={author.id}
+                            className={roleIcon}
+                            name={badge.description}
+                            size={20}
+                            src={badge.iconSrc}
+                        />
+                    ))}
+                </span>
+            );
         case "EquicordContributer":
             return isEquicordPluginDev(author.id) ? (
                 <span style={{ order: settings.store.EquicordContributorPosition }}>
@@ -130,6 +144,7 @@ function ChatBadges({ author }: { author: User; }) {
         <span className="vc-sbic-badge-row" style={{ margin: "2px" }}>
             {settings.store.showEquicordDonor && <CheckBadge badge={"EquicordDonor"} author={author} />}
             {settings.store.showEquicordContributor && <CheckBadge badge={"EquicordContributer"} author={author} />}
+            {settings.store.showPenguincordDonor && <CheckBadge badge={"PenguincordDonor"} author={author} />}
             {settings.store.showVencordDonor && <CheckBadge badge={"VencordDonor"} author={author} />}
             {settings.store.showVencordContributor && <CheckBadge badge={"VencordContributer"} author={author} />}
             {settings.store.showDiscordProfile && <CheckBadge badge={"DiscordProfile"} author={author} />}
