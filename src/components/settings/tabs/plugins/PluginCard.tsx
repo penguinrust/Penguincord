@@ -99,7 +99,7 @@ export function PluginCard({ plugin, disabled, onRestartNeeded, onMouseEnter, on
         },
         {
             condition: isPenguincordPlugin,
-            src: "https://wither.lol/assets/favicon.png",
+            src: "https://fatpenguin.dev/assets/favicon.png",
             alt: "Penguincord",
             title: "Penguincord Plugin"
         },

@@ -34,6 +34,7 @@ import { EquicordDonorModal, EquicordTranslatorModal, VencordDonorModal } from "
 
 const CONTRIBUTOR_BADGE = "https://cdn.discordapp.com/emojis/1092089799109775453.png?size=64";
 const EQUICORD_CONTRIBUTOR_BADGE = "https://equicord.org/assets/favicon.png";
+const PENGUINCORD_CONTRIBUTOR_BADGE = "https://fatpenguin.dev/assets/favicon.png";
 const USERPLUGIN_CONTRIBUTOR_BADGE = "https://equicord.org/assets/icons/misc/userplugin.png";
 
 const ContributorBadge: ProfileBadge = {
@@ -49,6 +50,21 @@ const EquicordContributorBadge: ProfileBadge = {
     id: "equicord_contributor_badge",
     description: "Equicord Contributor",
     iconSrc: EQUICORD_CONTRIBUTOR_BADGE,
+    position: BadgePosition.START,
+    shouldShow: ({ userId }) => shouldShowEquicordContributorBadge(userId),
+    onClick: (_, { userId }) => openContributorModal(UserStore.getUser(userId)),
+    props: {
+        style: {
+            borderRadius: "50%",
+            transform: "scale(0.9)"
+        }
+    },
+};
+
+const PenguincordContributorBadge: ProfileBadge = {
+    id: "penguincord_contributor_badge",
+    description: "Penguincord Contributor",
+    iconSrc: PENGUINCORD_CONTRIBUTOR_BADGE,
     position: BadgePosition.START,
     shouldShow: ({ userId }) => shouldShowEquicordContributorBadge(userId),
     onClick: (_, { userId }) => openContributorModal(UserStore.getUser(userId)),
@@ -84,6 +100,7 @@ const UserPluginContributorBadge: ProfileBadge = {
 
 let DonorBadges = {} as Record<string, Array<Record<"tooltip" | "badge", string>>>;
 let EquicordDonorBadges = {} as Record<string, Array<Record<"tooltip" | "badge", string>>>;
+let PenguincordDonorBadges = {} as Record<string, Array<Record<"tooltip" | "badge", string>>>;
 
 async function loadBadges(url: string, noCache = false) {
     const init = {} as RequestInit;
@@ -95,9 +112,11 @@ async function loadBadges(url: string, noCache = false) {
 async function loadAllBadges(noCache = false) {
     const vencordBadges = await loadBadges("https://badges.vencord.dev/badges.json", noCache);
     const equicordBadges = await loadBadges("https://badge.equicord.org/badges.json", noCache);
+    const penguincordBadges = await loadBadges("https://badges.fatpenguin.dev/badges.json", noCache);
 
     DonorBadges = vencordBadges;
     EquicordDonorBadges = equicordBadges;
+    PenguincordDonorBadges = penguincordBadges;
 }
 
 let intervalId: any;
@@ -175,6 +194,10 @@ export default definePlugin({
         return EquicordDonorBadges;
     },
 
+    get PenguincordDonorBadges() {
+        return PenguincordDonorBadges;
+    },
+
     toolboxActions: {
         async "Refetch Badges"() {
             await loadAllBadges(true);
@@ -186,7 +209,7 @@ export default definePlugin({
         }
     },
 
-    userProfileBadges: [ContributorBadge, EquicordContributorBadge, UserPluginContributorBadge],
+    userProfileBadges: [ContributorBadge, EquicordContributorBadge, UserPluginContributorBadge, PenguincordContributorBadge],
 
     async start() {
         await loadAllBadges();
@@ -265,6 +288,27 @@ export default definePlugin({
             },
             onClick() {
                 return badge.tooltip === "Equicord Translator" ? EquicordTranslatorModal() : EquicordDonorModal();
+            },
+        } satisfies ProfileBadge));
+    },
+
+    getPenguincordDonorBadges(userId: string) {
+        return PenguincordDonorBadges[userId]?.map((badge, idx) => ({
+            id: `penguincord_donor_badge_${idx}`,
+            iconSrc: badge.badge,
+            description: badge.tooltip,
+            position: BadgePosition.START,
+            props: {
+                style: {
+                    borderRadius: "50%",
+                    transform: "scale(0.9)" // The image is a bit too big compared to default badges
+                }
+            },
+            onContextMenu(event, badge) {
+                ContextMenuApi.openContextMenu(event, () => <BadgeContextMenu badge={badge} />);
+            },
+            onClick() {
+                return badge.tooltip === "Penguincord Translator" ? EquicordTranslatorModal() : EquicordDonorModal();
             },
         } satisfies ProfileBadge));
     }

@@ -60,7 +60,7 @@ function validateUrl(url: string) {
 
 const cloudBackendOptions = [
     { label: "Equicord Cloud", value: "https://cloud.equicord.org/" },
-    { label: "Penguincord Cloud", value: "https://cloud.wither.lol/" },
+    { label: "Penguincord Cloud", value: "https://cloud.fatpenguin.dev/" },
     { label: "Vencord Cloud", value: "https://api.vencord.dev/" }
 ];
 
