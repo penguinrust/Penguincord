@@ -124,10 +124,6 @@
       "name": "kemo",
       "id": "715746190813298788"
     },
-    "dzshn": {
-      "name": "dzshn",
-      "id": "310449948011528192"
-    },
     "Ducko": {
       "name": "Ducko",
       "id": "506482395269169153"
@@ -305,8 +301,8 @@
       "id": "354191516979429376"
     },
     "Rini": {
-      "name": "Rini",
-      "id": "1079479184478441643"
+      "name": "rini",
+      "id": "0"
     },
     "castdrian": {
       "name": "castdrian",
@@ -446,7 +442,7 @@
     },
     "Byeoon": {
       "name": "byeoon",
-      "id": "1167275288036655133"
+      "id": "495683688474869781"
     },
     "Kaitlyn": {
       "name": "kaitlyn",
@@ -519,6 +515,10 @@
     "surgedevs": {
       "name": "Chloe",
       "id": "1084592643784331324"
+    },
+    "Talya": {
+      "name": "Talya1412",
+      "id": "935942283214344302"
     },
     "Lumap": {
       "name": "Lumap",
@@ -595,9 +595,39 @@
     "nightmaresan": {
       "name": "NightmareSan",
       "id": "304239816466235392"
+    },
+    "angelcube": {
+      "name": "angelcube",
+      "id": "958505257288208446"
+    },
+    "Lunascape": {
+      "name": "Lunascape",
+      "id": "383365021415243776"
+    },
+    "jax": {
+      "name": "jax",
+      "id": "1493703027801194598"
+    },
+    "yuna0x0": {
+      "name": "yuna0x0",
+      "id": "213656926414831616"
     }
   },
   "penguincord": {
+    "nobody": {
+      "name": "nobody",
+      "id": "0"
+    },
+    "x2b": {
+      "name": "x2b",
+      "id": "0"
+    },
+    "syntt_": {
+      "name": "syntt_",
+      "id": "1419678867005767783"
+    }
+  },
+  "equicord": {
     "nobody": {
       "name": "nobody",
       "id": "0"
@@ -1048,7 +1078,7 @@
     },
     "Byeoon": {
       "name": "byeoon",
-      "id": "1167275288036655133"
+      "id": "495683688474869781"
     },
     "Skully": {
       "name": "Skully",
@@ -1305,6 +1335,26 @@
     "kat": {
       "name": "kat",
       "id": "665120188047556609"
+    },
+    "Star123451": {
+      "name": "Star123451",
+      "id": "1037526188039618560"
+    },
+    "auggeeo": {
+      "name": "August (auggeeo)",
+      "id": "594864203102158859"
+    },
+    "bastih18": {
+      "name": "bastih18",
+      "id": "273797150880563201"
+    },
+    "lucabeyer": {
+      "name": "luca.beyer",
+      "id": "405090676771127317"
+    },
+    "benjas333": {
+      "name": "benjas333",
+      "id": "456577284464443394"
     }
   }
 }
