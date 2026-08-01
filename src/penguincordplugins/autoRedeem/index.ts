@@ -4,12 +4,10 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-import { TestcordRequestCoordinator } from "@api/index";
 import { showNotification } from "@api/Notifications";
 import { definePluginSettings } from "@api/Settings";
 import { LogIcon } from "@components/Icons";
 import SettingsPlugin from "@plugins/_core/settings";
-import { TestcordDevs } from "@utils/constants";
 import { Logger } from "@utils/Logger";
 import { removeFromArray } from "@utils/misc";
 import definePlugin, { OptionType, type PluginNative } from "@utils/types";
@@ -150,13 +148,8 @@ function isCaptchaError(body: any): boolean {
 }
 
 // Fire a lightweight request on start to warm up DNS + TLS session for discord.com.
-// Subsequent requests reuse the cached connection, cutting first-request latency.
 function warmupConnection() {
-    TestcordRequestCoordinator.request({
-        key: "discord:warmup:users-me",
-        ttlMs: 10_000,
-        run: () => RestAPI.get({ url: "/users/@me" }),
-    }).catch(() => { });
+    RestAPI.get({ url: "/users/@me" }).catch(() => { });
 }
 
 function notifyPaused(reason: string) {
@@ -168,7 +161,7 @@ function notifyPaused(reason: string) {
     logger.warn(`Paused: ${reason}`);
 }
 
-async function trySolveCaptcha(captchaService: string, sitekey: string, rqdata: string | undefined, pageUrl: string): Promise<{ success: boolean; token?: string; error?: string }> {
+async function trySolveCaptcha(captchaService: string, sitekey: string, rqdata: string | undefined, pageUrl: string): Promise<{ success: boolean; token?: string; error?: string; }> {
     const apiKey = settings.store.noneCapApiKey.trim();
     if (!apiKey || !Native) return { success: false, error: "" };
 
@@ -195,13 +188,10 @@ async function sendClaimWebhook(code: string, status: "claimed" | "failed", gift
 
 async function precheckGift(code: string): Promise<{ ok: boolean; data?: any; reason?: string; }> {
     try {
-        const { body } = await TestcordRequestCoordinator.request<{ body?: GiftPrecheckBody; }>({
-            key: `discord:gift-precheck:${code}`,
-            ttlMs: 60_000,
-            run: () => RestAPI.get({
-                url: `/entitlements/gift-codes/${code}?with_application=false&with_subscription_plan=true`,
-            }) as Promise<{ body?: GiftPrecheckBody; }>,
-        });
+        const { body } = await RestAPI.get({
+            url: `/entitlements/gift-codes/${code}?with_application=false&with_subscription_plan=true`,
+        }) as { body?: GiftPrecheckBody; };
+
         if (body?.redeemed) return { ok: false, data: body, reason: "already claimed" };
         if (body?.uses != null && body?.max_uses != null && body.uses >= body.max_uses) {
             return { ok: false, data: body, reason: "already claimed" };
@@ -220,7 +210,6 @@ async function precheckGift(code: string): Promise<{ ok: boolean; data?: any; re
         if (e?.status === 404 || /unknown/i.test(msg) || /invalid/i.test(msg)) {
             return { ok: false, reason: "invalid code" };
         }
-        // Fall through and let the actual redeem attempt produce a real error.
         return { ok: true, reason: codeName || msg || undefined };
     }
 }
@@ -230,13 +219,11 @@ async function processQueue() {
     processing = true;
     try {
         if (settings.store.speedMode) {
-            // Parallel: process up to FAST_CONCURRENCY codes at once, zero delay.
             while (queue.length && !captchaPaused) {
                 const batch = queue.splice(0, FAST_CONCURRENCY);
                 await Promise.allSettled(batch.map(item => handleRedeem(item)));
             }
         } else {
-            // Serial: one at a time with jitter.
             while (queue.length && !captchaPaused) {
                 const item = queue.shift()!;
                 await handleRedeem(item);
@@ -254,14 +241,7 @@ async function handleRedeem(item: QueueItem) {
     const { code, channelId, messageId, guildId } = item;
     const fast = settings.store.speedMode;
 
-    // Aggressive mode (TestcordHelper) lets a speed-mode user skip the precheck
-    // round-trip entirely, shaving one RTT off each redeem. This raises captcha
-    // risk (precheck is what reduces captchas), so it only applies in speed mode
-    // and only when the TestcordHelper aggressive toggle is on. Default behavior
-    // is unchanged.
-    const skipPrecheck = fast && TestcordRequestCoordinator.aggressiveNetworkEnabled();
-
-    if (!skipPrecheck && (fast || settings.store.prevalidate)) {
+    if (fast || settings.store.prevalidate) {
         const pre = await precheckGift(code);
         if (!pre.ok) {
             const reason = pre.reason ?? "unredeemable";
@@ -375,7 +355,7 @@ async function handleRedeem(item: QueueItem) {
 export default definePlugin({
     name: "AutoRedeem",
     description: "Automatically redeems any Discord gift link (Nitro, decorations, etc.) sent in any channel.",
-    authors: [TestcordDevs.x2b],
+    authors: [{ name: "x2b", id: 0n }],
     settings,
 
     start() {
@@ -393,7 +373,6 @@ export default definePlugin({
 
     stop() {
         removeFromArray(SettingsPlugin.customEntries, e => e.key === SETTINGS_KEY);
-        // Drop pending work so a disabled plugin can't resume on next start.
         queue.length = 0;
         processing = false;
         captchaPaused = false;
