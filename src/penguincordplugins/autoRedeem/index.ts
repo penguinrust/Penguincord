@@ -6,6 +6,7 @@
 
 import { showNotification } from "@api/Notifications";
 import { definePluginSettings } from "@api/Settings";
+import { PenguincordDevs } from "@utils/constants";
 import { LogIcon } from "@components/Icons";
 import SettingsPlugin from "@plugins/_core/settings";
 import { Logger } from "@utils/Logger";
@@ -355,7 +356,7 @@ async function handleRedeem(item: QueueItem) {
 export default definePlugin({
     name: "AutoRedeem",
     description: "Automatically redeems any Discord gift link (Nitro, decorations, etc.) sent in any channel.",
-    authors: [{ name: "x2b", id: 0n }],
+    authors: [PenguincordDevs.x2b],
     settings,
 
     start() {

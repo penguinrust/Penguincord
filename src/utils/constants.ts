@@ -1429,6 +1429,15 @@ export const PenguincordDevs = Object.freeze({
         name: "nobody",
         id: 0n
     },
+    x2b: {
+        name: "x2b",
+        id: 0n
+    },
+    syntt_: {
+        name: "syntt_",
+        id: 1419678867005767783n
+    }
+
 } satisfies Record<string, Dev>);
 
 // iife so #__PURE__ works correctly

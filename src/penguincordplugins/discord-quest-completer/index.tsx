@@ -12,6 +12,7 @@ import definePlugin from "@utils/types";
 
 import { readDashboard, startOrion, stopOrion } from "./orion";
 import { settings } from "./settings";
+import { PenguincordDevs } from "@utils/constants";
 
 let isRunning = false;
 
@@ -45,7 +46,7 @@ export default definePlugin({
     name: "OrionQuests",
     description:
         "Auto-complete every Discord Quest in seconds — game, video, stream, activity, and achievement quests.",
-    authors: [{ name: "syntt_", id: 1419678867005767783n }],
+    authors: [PenguincordDevs.syntt_],
     settings,
 
     commands: [
